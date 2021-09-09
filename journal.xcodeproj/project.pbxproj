@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B8593E726EA4695008C446F /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8593E626EA4695008C446F /* TabBar.swift */; };
+		4B8593E926EA705F008C446F /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8593E826EA705F008C446F /* ViewRouter.swift */; };
 		4B89032026DFA3F200913020 /* Liquid in Frameworks */ = {isa = PBXBuildFile; productRef = 4B89031F26DFA3F200913020 /* Liquid */; };
 		4B89032226DFB65800913020 /* MoodTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89032126DFB65800913020 /* MoodTrackerView.swift */; };
 		4BC3C7EA26E95BE40016E47C /* CheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3C7E926E95BE40016E47C /* CheckButton.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B8593E626EA4695008C446F /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		4B8593E826EA705F008C446F /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		4B89032126DFB65800913020 /* MoodTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTrackerView.swift; sourceTree = "<group>"; };
 		4BC3C7E926E95BE40016E47C /* CheckButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckButton.swift; sourceTree = "<group>"; };
 		75713F6126DE51200032C954 /* journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = journal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +47,8 @@
 			isa = PBXGroup;
 			children = (
 				4BC3C7E926E95BE40016E47C /* CheckButton.swift */,
+				4B8593E626EA4695008C446F /* TabBar.swift */,
+				4B8593E826EA705F008C446F /* ViewRouter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -171,7 +177,9 @@
 				4B89032226DFB65800913020 /* MoodTrackerView.swift in Sources */,
 				75713F6726DE51200032C954 /* ContentView.swift in Sources */,
 				4BC3C7EA26E95BE40016E47C /* CheckButton.swift in Sources */,
+				4B8593E926EA705F008C446F /* ViewRouter.swift in Sources */,
 				75713F6526DE51200032C954 /* journalApp.swift in Sources */,
+				4B8593E726EA4695008C446F /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
