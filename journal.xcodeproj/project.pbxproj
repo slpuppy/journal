@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B89032026DFA3F200913020 /* Liquid in Frameworks */ = {isa = PBXBuildFile; productRef = 4B89031F26DFA3F200913020 /* Liquid */; };
+		4B89032226DFB65800913020 /* MoodTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89032126DFB65800913020 /* MoodTrackerView.swift */; };
+		4BC3C7EA26E95BE40016E47C /* CheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3C7E926E95BE40016E47C /* CheckButton.swift */; };
 		75713F6526DE51200032C954 /* journalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75713F6426DE51200032C954 /* journalApp.swift */; };
 		75713F6726DE51200032C954 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75713F6626DE51200032C954 /* ContentView.swift */; };
 		75713F6926DE51220032C954 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75713F6826DE51220032C954 /* Assets.xcassets */; };
@@ -14,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B89032126DFB65800913020 /* MoodTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTrackerView.swift; sourceTree = "<group>"; };
+		4BC3C7E926E95BE40016E47C /* CheckButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckButton.swift; sourceTree = "<group>"; };
 		75713F6126DE51200032C954 /* journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = journal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75713F6426DE51200032C954 /* journalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = journalApp.swift; sourceTree = "<group>"; };
 		75713F6626DE51200032C954 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -27,12 +32,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B89032026DFA3F200913020 /* Liquid in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4BC3C7E826E95BD70016E47C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4BC3C7E926E95BE40016E47C /* CheckButton.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4BC3C7EB26E998910016E47C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4B89032126DFB65800913020 /* MoodTrackerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		75713F5826DE51200032C954 = {
 			isa = PBXGroup;
 			children = (
@@ -55,6 +77,8 @@
 				75713F6426DE51200032C954 /* journalApp.swift */,
 				75713F6626DE51200032C954 /* ContentView.swift */,
 				75713F6826DE51220032C954 /* Assets.xcassets */,
+				4BC3C7EB26E998910016E47C /* Views */,
+				4BC3C7E826E95BD70016E47C /* Utils */,
 				75713F6D26DE51220032C954 /* Info.plist */,
 				75713F6A26DE51220032C954 /* Preview Content */,
 			);
@@ -85,6 +109,9 @@
 			dependencies = (
 			);
 			name = journal;
+			packageProductDependencies = (
+				4B89031F26DFA3F200913020 /* Liquid */,
+			);
 			productName = journal;
 			productReference = 75713F6126DE51200032C954 /* journal.app */;
 			productType = "com.apple.product-type.application";
@@ -112,6 +139,9 @@
 				Base,
 			);
 			mainGroup = 75713F5826DE51200032C954;
+			packageReferences = (
+				4B89031E26DFA3F200913020 /* XCRemoteSwiftPackageReference "liquid" */,
+			);
 			productRefGroup = 75713F6226DE51200032C954 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,7 +168,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B89032226DFB65800913020 /* MoodTrackerView.swift in Sources */,
 				75713F6726DE51200032C954 /* ContentView.swift in Sources */,
+				4BC3C7EA26E95BE40016E47C /* CheckButton.swift in Sources */,
 				75713F6526DE51200032C954 /* journalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +360,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4B89031E26DFA3F200913020 /* XCRemoteSwiftPackageReference "liquid" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maustinstar/liquid.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4B89031F26DFA3F200913020 /* Liquid */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B89031E26DFA3F200913020 /* XCRemoteSwiftPackageReference "liquid" */;
+			productName = Liquid;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 75713F5926DE51200032C954 /* Project object */;
 }
