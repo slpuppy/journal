@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32B0FA2B26EA2EA900A85E56 /* Journal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32B0FA2926EA2EA900A85E56 /* Journal.xcdatamodeld */; };
+		32B0FA2F26EA323200A85E56 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B0FA2E26EA323200A85E56 /* Persistence.swift */; };
+		32B0FA3126EA333300A85E56 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B0FA3026EA333300A85E56 /* TestView.swift */; };
 		4B89032026DFA3F200913020 /* Liquid in Frameworks */ = {isa = PBXBuildFile; productRef = 4B89031F26DFA3F200913020 /* Liquid */; };
 		4B89032226DFB65800913020 /* MoodTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89032126DFB65800913020 /* MoodTrackerView.swift */; };
 		4BC3C7EA26E95BE40016E47C /* CheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3C7E926E95BE40016E47C /* CheckButton.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32B0FA2A26EA2EA900A85E56 /* Journal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Journal.xcdatamodel; sourceTree = "<group>"; };
+		32B0FA2E26EA323200A85E56 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		32B0FA3026EA333300A85E56 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		4B89032126DFB65800913020 /* MoodTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTrackerView.swift; sourceTree = "<group>"; };
 		4BC3C7E926E95BE40016E47C /* CheckButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckButton.swift; sourceTree = "<group>"; };
 		75713F6126DE51200032C954 /* journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = journal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +45,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32B0FA2C26EA2EB400A85E56 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				32B0FA2D26EA2EBA00A85E56 /* Data */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		32B0FA2D26EA2EBA00A85E56 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				32B0FA2926EA2EA900A85E56 /* Journal.xcdatamodeld */,
+				32B0FA2E26EA323200A85E56 /* Persistence.swift */,
+				32B0FA3026EA333300A85E56 /* TestView.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		4BC3C7E826E95BD70016E47C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +98,7 @@
 		75713F6326DE51200032C954 /* journal */ = {
 			isa = PBXGroup;
 			children = (
+				32B0FA2C26EA2EB400A85E56 /* Models */,
 				75713F6426DE51200032C954 /* journalApp.swift */,
 				75713F6626DE51200032C954 /* ContentView.swift */,
 				75713F6826DE51220032C954 /* Assets.xcassets */,
@@ -168,8 +193,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32B0FA3126EA333300A85E56 /* TestView.swift in Sources */,
 				4B89032226DFB65800913020 /* MoodTrackerView.swift in Sources */,
+				32B0FA2B26EA2EA900A85E56 /* Journal.xcdatamodeld in Sources */,
 				75713F6726DE51200032C954 /* ContentView.swift in Sources */,
+				32B0FA2F26EA323200A85E56 /* Persistence.swift in Sources */,
 				4BC3C7EA26E95BE40016E47C /* CheckButton.swift in Sources */,
 				75713F6526DE51200032C954 /* journalApp.swift in Sources */,
 			);
@@ -379,6 +407,19 @@
 			productName = Liquid;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		32B0FA2926EA2EA900A85E56 /* Journal.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				32B0FA2A26EA2EA900A85E56 /* Journal.xcdatamodel */,
+			);
+			currentVersion = 32B0FA2A26EA2EA900A85E56 /* Journal.xcdatamodel */;
+			path = Journal.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 75713F5926DE51200032C954 /* Project object */;
 }
