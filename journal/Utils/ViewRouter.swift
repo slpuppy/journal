@@ -11,11 +11,11 @@ class ViewRouter: ObservableObject {
     
     @Published var currentPage: Page = .home
     
-    
 }
 
 enum Page {
     case home
-    case newEntry
-    case yourJourney
+    case colection
+    case history
+    case profile
 }
