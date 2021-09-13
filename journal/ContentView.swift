@@ -33,7 +33,10 @@ struct ContentView: View {
                         }
                         
                     }
-                    ForEach(viewEntry.textArray) { text in
+//                    ForEach(viewEntry.textArray) { text in
+//                        Text(text.text ?? "empty")
+//                    }
+                    ForEach(viewEntry.texts!.allObjects as! [EntrysTexts]) { text in
                         Text(text.text ?? "empty")
                     }
                 }.onDelete(perform: deleteTasks)
