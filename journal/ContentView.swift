@@ -15,7 +15,7 @@ struct ContentView: View {
     var body: some View {
         
         GeometryReader { geometry in
-            VStack{
+            VStack(spacing: 0){
                 Spacer()
                 
                 switch viewRouter.currentPage {
@@ -29,7 +29,7 @@ struct ContentView: View {
                     Text("Perfil")
                 }
                 
-                Spacer()
+                
                 TabBar(viewRouter: viewRouter).frame(width: geometry.size.width, height: geometry.size.height / 8)
                 
             }.background(Color("BackgroundColor").ignoresSafeArea())
