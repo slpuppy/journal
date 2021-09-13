@@ -73,7 +73,7 @@ struct TabBar: View {
                 Spacer()
                 TabBarIcon(systemIconName: "house", tabName: "Início", width: geometry.size.width / 7, height: geometry.size.height/4, viewRouter: viewRouter, assignedPage: .home)
                 Spacer()
-                TabBarIcon(systemIconName: "books.vertical", tabName: "Coleção", width: geometry.size.width / 7, height: geometry.size.height/4, viewRouter: viewRouter, assignedPage: .colection)
+                TabBarIcon(systemIconName: "books.vertical", tabName: "Coleção", width: geometry.size.width / 7, height: geometry.size.height/4, viewRouter: viewRouter, assignedPage: .collection)
                 Spacer()
                 TabBarIcon(systemIconName: "clock.arrow.circlepath", tabName: "Histórico", width: geometry.size.width / 7, height: geometry.size.height/4, viewRouter: viewRouter, assignedPage: .history)
                 Spacer()

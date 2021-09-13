@@ -15,7 +15,7 @@ class ViewRouter: ObservableObject {
 
 enum Page {
     case home
-    case colection
+    case collection
     case history
     case profile
 }

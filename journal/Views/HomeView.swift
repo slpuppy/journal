@@ -141,7 +141,7 @@ struct HomeView: View {
                 CheckInCardView()
                 
                 CollectionCardView().onTapGesture {
-                    viewRouter.currentPage = .colection
+                    viewRouter.currentPage = .collection
                 }
                 
                 HistoryCardView().onTapGesture {
