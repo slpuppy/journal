@@ -20,7 +20,7 @@ struct ContentView: View {
                 
                 switch viewRouter.currentPage {
                 case .home:
-                    Text("Inicio")
+                    HomeView(viewRouter: viewRouter)
                 case .colection:
                     Text("Coleção de sentimentos")
                 case .history:
