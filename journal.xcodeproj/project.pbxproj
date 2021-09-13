@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		32B0FA2B26EA2EA900A85E56 /* Journal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32B0FA2926EA2EA900A85E56 /* Journal.xcdatamodeld */; };
 		32B0FA2F26EA323200A85E56 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B0FA2E26EA323200A85E56 /* Persistence.swift */; };
-		32B0FA3126EA333300A85E56 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B0FA3026EA333300A85E56 /* TestView.swift */; };
+		32D08BC026EEF719001CAF90 /* Entrys+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D08BBC26EEF719001CAF90 /* Entrys+CoreDataClass.swift */; };
+		32D08BC126EEF719001CAF90 /* Entrys+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D08BBD26EEF719001CAF90 /* Entrys+CoreDataProperties.swift */; };
+		32D08BC226EEF719001CAF90 /* EntrysTexts+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D08BBE26EEF719001CAF90 /* EntrysTexts+CoreDataClass.swift */; };
+		32D08BC326EEF719001CAF90 /* EntrysTexts+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D08BBF26EEF719001CAF90 /* EntrysTexts+CoreDataProperties.swift */; };
 		4B89032026DFA3F200913020 /* Liquid in Frameworks */ = {isa = PBXBuildFile; productRef = 4B89031F26DFA3F200913020 /* Liquid */; };
 		4B89032226DFB65800913020 /* MoodTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89032126DFB65800913020 /* MoodTrackerView.swift */; };
 		4BC3C7EA26E95BE40016E47C /* CheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3C7E926E95BE40016E47C /* CheckButton.swift */; };
@@ -22,7 +25,10 @@
 /* Begin PBXFileReference section */
 		32B0FA2A26EA2EA900A85E56 /* Journal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Journal.xcdatamodel; sourceTree = "<group>"; };
 		32B0FA2E26EA323200A85E56 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		32B0FA3026EA333300A85E56 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		32D08BBC26EEF719001CAF90 /* Entrys+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entrys+CoreDataClass.swift"; sourceTree = "<group>"; };
+		32D08BBD26EEF719001CAF90 /* Entrys+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entrys+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		32D08BBE26EEF719001CAF90 /* EntrysTexts+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntrysTexts+CoreDataClass.swift"; sourceTree = "<group>"; };
+		32D08BBF26EEF719001CAF90 /* EntrysTexts+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EntrysTexts+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4B89032126DFB65800913020 /* MoodTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTrackerView.swift; sourceTree = "<group>"; };
 		4BC3C7E926E95BE40016E47C /* CheckButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckButton.swift; sourceTree = "<group>"; };
 		75713F6126DE51200032C954 /* journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = journal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,19 +54,30 @@
 		32B0FA2C26EA2EB400A85E56 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				32B0FA2D26EA2EBA00A85E56 /* Data */,
+				32D08BBB26EEF650001CAF90 /* Classes */,
+				32B0FA2D26EA2EBA00A85E56 /* Config */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		32B0FA2D26EA2EBA00A85E56 /* Data */ = {
+		32B0FA2D26EA2EBA00A85E56 /* Config */ = {
 			isa = PBXGroup;
 			children = (
 				32B0FA2926EA2EA900A85E56 /* Journal.xcdatamodeld */,
 				32B0FA2E26EA323200A85E56 /* Persistence.swift */,
-				32B0FA3026EA333300A85E56 /* TestView.swift */,
 			);
-			path = Data;
+			path = Config;
+			sourceTree = "<group>";
+		};
+		32D08BBB26EEF650001CAF90 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				32D08BBC26EEF719001CAF90 /* Entrys+CoreDataClass.swift */,
+				32D08BBD26EEF719001CAF90 /* Entrys+CoreDataProperties.swift */,
+				32D08BBE26EEF719001CAF90 /* EntrysTexts+CoreDataClass.swift */,
+				32D08BBF26EEF719001CAF90 /* EntrysTexts+CoreDataProperties.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		4BC3C7E826E95BD70016E47C /* Utils */ = {
@@ -193,9 +210,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32B0FA3126EA333300A85E56 /* TestView.swift in Sources */,
 				4B89032226DFB65800913020 /* MoodTrackerView.swift in Sources */,
 				32B0FA2B26EA2EA900A85E56 /* Journal.xcdatamodeld in Sources */,
+				32D08BC126EEF719001CAF90 /* Entrys+CoreDataProperties.swift in Sources */,
+				32D08BC326EEF719001CAF90 /* EntrysTexts+CoreDataProperties.swift in Sources */,
+				32D08BC226EEF719001CAF90 /* EntrysTexts+CoreDataClass.swift in Sources */,
+				32D08BC026EEF719001CAF90 /* Entrys+CoreDataClass.swift in Sources */,
 				75713F6726DE51200032C954 /* ContentView.swift in Sources */,
 				32B0FA2F26EA323200A85E56 /* Persistence.swift in Sources */,
 				4BC3C7EA26E95BE40016E47C /* CheckButton.swift in Sources */,

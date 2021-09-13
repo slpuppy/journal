@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G95" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Entrys" representedClassName="Entrys" syncable="YES">
+        <attribute name="afterMood" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="mood" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="texts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EntrysTexts" inverseName="entry" inverseEntity="EntrysTexts"/>
+    </entity>
+    <entity name="EntrysTexts" representedClassName="EntrysTexts" syncable="YES">
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <relationship name="entry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Entrys" inverseName="texts" inverseEntity="Entrys"/>
+    </entity>
+    <entity name="Feelings" representedClassName="Feelings" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="tag" optional="YES" attributeType="String"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="FeelingType" representedClassName="FeelingType" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Questions" representedClassName="Questions" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="QuestionsType" representedClassName="QuestionsType" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Entrys" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="EntrysTexts" positionX="0" positionY="81" width="128" height="74"/>
+        <element name="Feelings" positionX="-18" positionY="45" width="128" height="74"/>
+        <element name="FeelingType" positionX="-54" positionY="18" width="128" height="59"/>
+        <element name="Questions" positionX="-36" positionY="27" width="128" height="59"/>
+        <element name="QuestionsType" positionX="-63" positionY="9" width="128" height="59"/>
+    </elements>
+</model>
