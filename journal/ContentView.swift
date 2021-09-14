@@ -26,7 +26,7 @@ struct ContentView: View {
                 case .history:
                     Text("Histórico")
                 case .profile:
-                    Text("Perfil")
+                    ProfileView()
                 }
                 
                 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B75947C26F0E70200A9F8C7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B75947B26F0E70200A9F8C7 /* ProfileView.swift */; };
 		4B8593E926EA705F008C446F /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8593E826EA705F008C446F /* ViewRouter.swift */; };
 		4B89032026DFA3F200913020 /* Liquid in Frameworks */ = {isa = PBXBuildFile; productRef = 4B89031F26DFA3F200913020 /* Liquid */; };
 		4B89032226DFB65800913020 /* MoodTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89032126DFB65800913020 /* MoodTrackerView.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B75947B26F0E70200A9F8C7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		4B8593E626EA4695008C446F /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		4B8593E826EA705F008C446F /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		4B89032126DFB65800913020 /* MoodTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTrackerView.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				4B89032126DFB65800913020 /* MoodTrackerView.swift */,
+				4B75947B26F0E70200A9F8C7 /* ProfileView.swift */,
 				B33BD6DD26EA33F6005913D2 /* TagSelectionView.swift */,
 				B33BD6E126EAF23F005913D2 /* ProgressBarView.swift */,
 				4B8DE54926ED28F1005EBF39 /* HomeView.swift */,
@@ -193,6 +196,7 @@
 			files = (
 				4B8DE54A26ED28F1005EBF39 /* HomeView.swift in Sources */,
 				4B89032226DFB65800913020 /* MoodTrackerView.swift in Sources */,
+				4B75947C26F0E70200A9F8C7 /* ProfileView.swift in Sources */,
 				75713F6726DE51200032C954 /* ContentView.swift in Sources */,
 				4BC3C7EA26E95BE40016E47C /* CheckButton.swift in Sources */,
 				4BB443FA26EC0C9C00570206 /* TabBar.swift in Sources */,
