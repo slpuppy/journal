@@ -8,8 +8,32 @@
 import SwiftUI
 
 struct TagSelectionView: View {
+    @State var reflection: String = ""
+    @State var reflectionTitle: String = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    
+        VStack(alignment: .leading){
+            VStack(alignment: .leading){
+                Text("O que você está sentindo?")
+                    .modifier(Titulos())
+                    .padding(.bottom)
+                Text("ALEGRIA")
+                    .modifier(SubTitulo())
+                HStack{
+                    Text("Amor")
+                        .modifier(Tags())
+                    Text("Vigilância")
+                        .modifier(TagSelected())
+                    Text("Pessimismo")
+                        .modifier(Tags())
+                        
+                }.padding(.bottom, 10)
+                
+                
+            }
+            
+        }.padding()
     }
 }
 
