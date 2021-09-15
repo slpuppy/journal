@@ -24,13 +24,14 @@ struct ProfileView: View {
                 
                 Spacer()
                 
+                ExtrasView()
+                
             }.padding()
             
         }
         
     }
 }
-
 
 
 struct StatsView: View {
@@ -129,6 +130,64 @@ struct NotificationSettingsView: View {
     }
     
 }
+
+struct ExtrasView: View {
+    
+    @State private var creditsIsPresented = false
+    @State private var feedbacksIsPresented = false
+    @State private var privacyIsPresented = false
+    
+    var body: some View {
+        VStack{
+        
+            HStack{
+                Text("Créditos")
+                    .foregroundColor(Color("AzulEscuro"))
+                    .font(.system(size: 20, weight: .medium))
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .foregroundColor(.gray)
+            }.onTapGesture {
+                creditsIsPresented.toggle()
+            }
+        
+            Divider()
+            
+            HStack{
+                Text("Feedbacks")
+                    .foregroundColor(Color("AzulEscuro"))
+                    .font(.system(size: 20, weight: .medium))
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .foregroundColor(.gray)
+            }.onTapGesture {
+                feedbacksIsPresented.toggle()
+            }
+            
+            Divider()
+            
+            HStack{
+                Text("Privacidade")
+                    .foregroundColor(Color("AzulEscuro"))
+                    .font(.system(size: 20, weight: .medium))
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .foregroundColor(.gray)
+            }.onTapGesture {
+                privacyIsPresented.toggle()
+            }
+        
+        }.padding()
+        .frame(maxWidth: .infinity)
+        .background(Color(.white))
+        .cornerRadius(12)
+        .shadow(radius: 3)
+        .fullScreenCover(isPresented: $creditsIsPresented, content: CreditsView.init)
+        .fullScreenCover(isPresented: $feedbacksIsPresented, content: FeedbacksView.init)
+        .fullScreenCover(isPresented: $privacyIsPresented, content: PrivacyView.init)
+    }
+}
+
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
