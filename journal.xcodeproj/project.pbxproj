@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		327655E126EF89D7003DDB0C /* journalED.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327655E026EF89D7003DDB0C /* journalED.swift */; };
+		3227378726F127AA00659B79 /* JournalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3227378626F127AA00659B79 /* JournalController.swift */; };
+		327655E126EF89D7003DDB0C /* journalModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327655E026EF89D7003DDB0C /* journalModels.swift */; };
 		4B8593E926EA705F008C446F /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8593E826EA705F008C446F /* ViewRouter.swift */; };
 		4B89032026DFA3F200913020 /* Liquid in Frameworks */ = {isa = PBXBuildFile; productRef = 4B89031F26DFA3F200913020 /* Liquid */; };
 		4B89032226DFB65800913020 /* MoodTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B89032126DFB65800913020 /* MoodTrackerView.swift */; };
@@ -22,7 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		327655E026EF89D7003DDB0C /* journalED.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = journalED.swift; sourceTree = "<group>"; };
+		3227378626F127AA00659B79 /* JournalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalController.swift; sourceTree = "<group>"; };
+		327655E026EF89D7003DDB0C /* journalModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = journalModels.swift; sourceTree = "<group>"; };
 		4B8593E626EA4695008C446F /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		4B8593E826EA705F008C446F /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		4B89032126DFB65800913020 /* MoodTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTrackerView.swift; sourceTree = "<group>"; };
@@ -52,7 +54,8 @@
 		32B0FA2C26EA2EB400A85E56 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				327655E026EF89D7003DDB0C /* journalED.swift */,
+				327655E026EF89D7003DDB0C /* journalModels.swift */,
+				3227378626F127AA00659B79 /* JournalController.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -194,9 +197,10 @@
 				4B89032226DFB65800913020 /* MoodTrackerView.swift in Sources */,
 				75713F6726DE51200032C954 /* ContentView.swift in Sources */,
 				4BC3C7EA26E95BE40016E47C /* CheckButton.swift in Sources */,
+				3227378726F127AA00659B79 /* JournalController.swift in Sources */,
 				4BB443FA26EC0C9C00570206 /* TabBar.swift in Sources */,
 				4B8593E926EA705F008C446F /* ViewRouter.swift in Sources */,
-				327655E126EF89D7003DDB0C /* journalED.swift in Sources */,
+				327655E126EF89D7003DDB0C /* journalModels.swift in Sources */,
 				75713F6526DE51200032C954 /* journalApp.swift in Sources */,
 				B33BD6DE26EA33F6005913D2 /* TagSelectionView.swift in Sources */,
 				B33BD6E226EAF23F005913D2 /* ProgressBarView.swift in Sources */,
