@@ -14,6 +14,7 @@ struct ProfileView: View {
         ScrollView{
             VStack{
                 
+                UsernameEditView()
                 Spacer()
                 
                 StatsView()
@@ -33,6 +34,36 @@ struct ProfileView: View {
     }
 }
 
+
+struct UsernameEditView: View {
+    
+    @State var username: String = "Joãozinho"
+    @State var disableNameEditing: Bool = true
+    
+    var body: some View {
+        HStack{
+            TextField("", text: $username)
+                .font(.title)
+                .foregroundColor(Color("Cinzão"))
+                .disabled(disableNameEditing)
+                
+            Spacer()
+            
+            Image(systemName: disableNameEditing ? "pencil" : "checkmark")
+                .font(.title2)
+                .foregroundColor(disableNameEditing ? Color(.gray) : Color("AzulEscuro"))
+                .onTapGesture {
+                    disableNameEditing.toggle()
+                }
+            
+        }.padding()
+        .frame(maxWidth: .infinity)
+        .background(disableNameEditing ? Color(.clear) : Color(.white))
+        .cornerRadius(12)
+        .shadow(radius: disableNameEditing ? 0 : 3)
+        .padding(.bottom)
+    }
+}
 
 struct StatsView: View {
     
@@ -56,7 +87,7 @@ struct StatsView: View {
                         .font(.title3)
                         .foregroundColor(Color("Cinzão"))
                         .fontWeight(.medium)
-                    Text("Último check-in em 212/09/2021")
+                    Text("Último check-in em 21/09/2021")
                         .font(.caption)
                         .foregroundColor(.gray)
                 }
