@@ -40,7 +40,7 @@ struct FeelingRow: View {
                     VStack {
                         HStack {
                             Image(systemName: "seal").foregroundColor(Color("Roxão dark"))
-                            Text(model.name)
+                            Text(model.tag)
                                 .foregroundColor(Color("Roxão dark"))
                                 .font(.system(size: 20, weight: .medium, design: .default))
                                 .lineLimit(nil)
@@ -52,7 +52,7 @@ struct FeelingRow: View {
                         
                         if model.isExpanded {
                             VStack(alignment: .leading){
-                                Text(model.detail)
+                                Text(model.text)
                                     .lineLimit(nil)
                                     .font(.system(size: 16, weight: .regular, design: .default))
                                     .foregroundColor(Color("Cinza rating"))

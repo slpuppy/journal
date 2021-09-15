@@ -23,7 +23,6 @@
 		75713F6726DE51200032C954 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75713F6626DE51200032C954 /* ContentView.swift */; };
 		75713F6926DE51220032C954 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75713F6826DE51220032C954 /* Assets.xcassets */; };
 		75713F6C26DE51220032C954 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75713F6B26DE51220032C954 /* Preview Assets.xcassets */; };
-		7591F1DA26F21D7300AEDF78 /* Feeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7591F1D926F21D7300AEDF78 /* Feeling.swift */; };
 		7591F1DC26F21DBF00AEDF78 /* FeelingsCollectionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7591F1DB26F21DBF00AEDF78 /* FeelingsCollectionTableView.swift */; };
 		7591F1DE26F21DFB00AEDF78 /* EmotionCollectionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7591F1DD26F21DFB00AEDF78 /* EmotionCollectionDataManager.swift */; };
 		B3010C0126F0D14300FB5827 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3010C0026F0D14300FB5827 /* QuestionView.swift */; };
@@ -51,7 +50,6 @@
 		75713F6826DE51220032C954 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75713F6B26DE51220032C954 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		75713F6D26DE51220032C954 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7591F1D926F21D7300AEDF78 /* Feeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feeling.swift; sourceTree = "<group>"; };
 		7591F1DB26F21DBF00AEDF78 /* FeelingsCollectionTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingsCollectionTableView.swift; sourceTree = "<group>"; };
 		7591F1DD26F21DFB00AEDF78 /* EmotionCollectionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionCollectionDataManager.swift; sourceTree = "<group>"; };
 		B3010C0026F0D14300FB5827 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
@@ -76,12 +74,8 @@
 		32B0FA2C26EA2EB400A85E56 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-
-				7591F1D926F21D7300AEDF78 /* Feeling.swift */,
-
 				327655E026EF89D7003DDB0C /* journalModels.swift */,
 				3227378626F127AA00659B79 /* JournalController.swift */,
-
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -245,7 +239,6 @@
 				327655E126EF89D7003DDB0C /* journalModels.swift in Sources */,
 				75713F6526DE51200032C954 /* journalApp.swift in Sources */,
 				B3010C0926F1548700FB5827 /* Modifiers.swift in Sources */,
-				7591F1DA26F21D7300AEDF78 /* Feeling.swift in Sources */,
 				B3010C0126F0D14300FB5827 /* QuestionView.swift in Sources */,
 				B33BD6DE26EA33F6005913D2 /* TagSelectionView.swift in Sources */,
 				B3010C0526F14C3A00FB5827 /* RatingView.swift in Sources */,
