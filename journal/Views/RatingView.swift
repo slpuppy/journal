@@ -24,7 +24,7 @@ struct RatingView: View {
                 Circle()
                     .foregroundColor(Color("Roxão dark"))
                 Image(systemName: "checkmark")
-                    .font(.custom("SF Pro Display Regular", size: 20))
+                    .font(.system(size: 20.0))
                     .foregroundColor(.white)
                     
             }.frame(width: 60, height: 60)
@@ -46,7 +46,7 @@ struct blobPior: View {
                         
             }.frame(width: 104, height: 104)
             Text("Pior")
-                .font(.custom("SF Pro Text Regular", size: 15))
+                .font(.system(size: 15.0))
                 .foregroundColor(.gray)
         }
         
@@ -65,8 +65,7 @@ struct blobIgual: View {
                         
             }.frame(width: 104, height: 104)
             Text("Igual")
-                .font(.custom("SF Pro Text Regular", size: 15))
-                .foregroundColor(.gray)
+                .font(.system(size: 15.0))                .foregroundColor(.gray)
         }
         
     }
@@ -85,7 +84,7 @@ struct blobMelhor: View {
                         
             }.frame(width: 104, height: 104)
             Text("Melhor")
-                .font(.custom("SF Pro Text Regular", size: 15))
+                .font(.system(size: 15.0))
                 .foregroundColor(.gray)
         }
         
