@@ -12,7 +12,7 @@ struct ProgressBarView: View {
     var maximum: Int = 5
     var height: CGFloat = 5
     var spacing: CGFloat = 4
-    var selectedColor: Color = Color("Rosinha")
+    var selectedColor: Color = Color("AzulEscuro")
     var unselectedColor: Color = .gray.opacity(0.3)
     
     var body: some View {
