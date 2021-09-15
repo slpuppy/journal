@@ -86,48 +86,184 @@ class Feeling:  Codable, Identifiable {
     let tag: String
     let text: String
     let type: FeelingType
+    var isExpanded: Bool
     
-    init(tag: String, type: FeelingType) {
+    init(tag: String, text: String, type: FeelingType, isExpanded: Bool) {
         self.tag = tag
         self.type = type
-        self.text = ""
+        self.text = text
+        self.isExpanded = isExpanded
     }
     
     static var shared = [
-        Feeling(tag: "amoros@", type: .alegria),
-        Feeling(tag: "otimista", type: .alegria),
-        Feeling(tag: "extasiad@", type: .alegria),
-        Feeling(tag: "alegre", type: .alegria),
-        Feeling(tag: "seren@", type: .alegria),
-        Feeling(tag: "luto", type: .tristeza),
-        Feeling(tag: "triste", type: .tristeza),
-        Feeling(tag: "melancolic@", type: .tristeza),
-        Feeling(tag: "descepcionad@", type: .tristeza),
-        Feeling(tag: "interessad@", type: .antecipacao),
-        Feeling(tag: "ansios@", type: .antecipacao),
-        Feeling(tag: "vigilante", type: .antecipacao),
-        Feeling(tag: "maravilhad@", type: .surpresa),
-        Feeling(tag: "surpres@", type: .surpresa),
-        Feeling(tag: "distraid@", type: .surpresa),
-        Feeling(tag: "repugnancia", type: .nojo),
-        Feeling(tag: "enojad@", type: .nojo),
-        Feeling(tag: "entediad@", type: .nojo),
-        Feeling(tag: "adminirad@", type: .confianca),
-        Feeling(tag: "confiante", type: .confianca),
-        Feeling(tag: "aceit@", type: .confianca),
-        Feeling(tag: "irad@", type: .raiva),
-        Feeling(tag: "irritad@", type: .raiva),
-        Feeling(tag: "aborrecid@", type: .raiva),
-        Feeling(tag: "aterrorizad@", type: .medo),
-        Feeling(tag: "medo", type: .medo),
-        Feeling(tag: "apreenciv@", type: .medo),
-        Feeling(tag: "intimidad@", type: .medo),
-        Feeling(tag: "culpad@", type: .outros),
-        Feeling(tag: "orgulhos@", type: .outros),
-        Feeling(tag: "desesperad@", type: .outros),
-        Feeling(tag: "inveja", type: .outros),
-        Feeling(tag: "pessimista", type: .outros),
-        Feeling(tag: "apatic@", type: .outros)
+        Feeling(tag: "amoros@",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .alegria,
+                isExpanded: false),
+       
+        Feeling(tag: "otimista",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .alegria,
+                isExpanded: false),
+       
+        Feeling(tag: "extasiad@",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .alegria,
+                isExpanded: false),
+        
+        Feeling(tag: "alegre",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .alegria,
+                isExpanded: false),
+       
+        Feeling(tag: "seren@",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .alegria,
+                isExpanded: false),
+        
+        Feeling(tag: "luto",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .tristeza,
+                isExpanded: false),
+        
+        Feeling(tag: "triste",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .tristeza,
+                isExpanded: false),
+       
+        Feeling(tag: "melancolic@",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .tristeza,
+                isExpanded: false),
+        
+        Feeling(tag: "descepcionad@",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .tristeza,
+                isExpanded: false),
+        
+        Feeling(tag: "interessad@",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .antecipacao,
+                isExpanded: false),
+        
+        Feeling(tag: "ansios@",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .antecipacao,
+                isExpanded: false),
+        
+        Feeling(tag: "vigilante",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .antecipacao,
+                isExpanded: false),
+        
+        Feeling(tag: "maravilhad@",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .surpresa,
+                isExpanded: false),
+        
+        Feeling(tag: "surpres@",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .surpresa,
+                isExpanded: false),
+        
+        Feeling(tag: "distraid@",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .surpresa,
+                isExpanded: false),
+        
+        Feeling(tag: "repugnancia",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .nojo,
+                isExpanded: false),
+        
+        Feeling(tag: "enojad@",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .nojo,
+                isExpanded: false),
+        
+        Feeling(tag: "entediad@",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .nojo,
+                isExpanded: false),
+        Feeling(tag: "adminirad@",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .confianca,
+                isExpanded: false),
+        
+        Feeling(tag: "confiante",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .confianca,
+                isExpanded: false),
+        
+        Feeling(tag: "aceit@",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .confianca,
+                isExpanded: false),
+       
+        Feeling(tag: "irad@",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .raiva,
+                isExpanded: false),
+        
+        Feeling(tag: "irritad@",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .raiva,
+                isExpanded: false),
+        
+        Feeling(tag: "aborrecid@",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .raiva,
+                isExpanded: false),
+        
+        Feeling(tag: "aterrorizad@",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .medo,
+                isExpanded: false),
+       
+        Feeling(tag: "medo",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .medo,
+                isExpanded: false),
+       
+        Feeling(tag: "apreenciv@",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .medo,
+                isExpanded: false),
+        
+        Feeling(tag: "intimidad@",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .medo,
+                isExpanded: false),
+        
+        Feeling(tag: "culpad@",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .outros,
+                isExpanded: false),
+        
+        Feeling(tag: "orgulhos@",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .outros,
+                isExpanded: false),
+        
+        Feeling(tag: "desesperad@",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .outros,
+                isExpanded: false),
+        
+        Feeling(tag: "inveja",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .outros,
+                isExpanded: false),
+        
+        Feeling(tag: "pessimista",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .outros,
+                isExpanded: false),
+        
+        Feeling(tag: "apatic@",
+                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
+                type: .outros,
+                isExpanded: false)
     ]
 }
 

@@ -56,9 +56,9 @@ class JournalController: ObservableObject {
         }
     }
     
-    func addUserFeeling(tag: String, type: FeelingType){
+    func addUserFeeling(tag: String, text: String, type: FeelingType, isExpanded: Bool){
         userFeelings.append(
-            Feeling(tag: tag, type: type)
+            Feeling(tag: tag, text: text, type: type, isExpanded: isExpanded)
         )
         saveFeeling(userFeelings)
         updateFeeling()
