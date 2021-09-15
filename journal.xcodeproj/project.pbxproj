@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3227378726F127AA00659B79 /* JournalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3227378626F127AA00659B79 /* JournalController.swift */; };
+		327655E126EF89D7003DDB0C /* journalModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327655E026EF89D7003DDB0C /* journalModels.swift */; };
 		4B75947C26F0E70200A9F8C7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B75947B26F0E70200A9F8C7 /* ProfileView.swift */; };
 		4B75947E26F17DF500A9F8C7 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B75947D26F17DF500A9F8C7 /* CreditsView.swift */; };
 		4B75948026F17E1B00A9F8C7 /* FeedbacksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B75947F26F17E1B00A9F8C7 /* FeedbacksView.swift */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3227378626F127AA00659B79 /* JournalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalController.swift; sourceTree = "<group>"; };
+		327655E026EF89D7003DDB0C /* journalModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = journalModels.swift; sourceTree = "<group>"; };
 		4B75947B26F0E70200A9F8C7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		4B75947D26F17DF500A9F8C7 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
 		4B75947F26F17E1B00A9F8C7 /* FeedbacksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbacksView.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 		32B0FA2C26EA2EB400A85E56 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				327655E026EF89D7003DDB0C /* journalModels.swift */,
+				3227378626F127AA00659B79 /* JournalController.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -220,8 +226,10 @@
 				75713F6726DE51200032C954 /* ContentView.swift in Sources */,
 				4B75948026F17E1B00A9F8C7 /* FeedbacksView.swift in Sources */,
 				4BC3C7EA26E95BE40016E47C /* CheckButton.swift in Sources */,
+				3227378726F127AA00659B79 /* JournalController.swift in Sources */,
 				4BB443FA26EC0C9C00570206 /* TabBar.swift in Sources */,
 				4B8593E926EA705F008C446F /* ViewRouter.swift in Sources */,
+				327655E126EF89D7003DDB0C /* journalModels.swift in Sources */,
 				75713F6526DE51200032C954 /* journalApp.swift in Sources */,
 				B3010C0926F1548700FB5827 /* Modifiers.swift in Sources */,
 				B3010C0126F0D14300FB5827 /* QuestionView.swift in Sources */,

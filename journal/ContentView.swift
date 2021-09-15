@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var controller: JournalController
     
     @StateObject var viewRouter: ViewRouter
-    
     
     var body: some View {
         
