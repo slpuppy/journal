@@ -41,7 +41,7 @@ struct blobPior: View {
                     .foregroundColor(Color.white)
                 Liquid(samples: 5, period: 5).frame(width: 90, height: 90)
                     .foregroundColor(Color("Azul Rating"))
-                Line(start: CGPoint(x: 30, y: 52), end: CGPoint(x: 70, y: 52), control: CGPoint(x: 50, y: 52))
+                Line(start: CGPoint(x: 30, y: 52), end: CGPoint(x: 70, y: 52), control: CGPoint(x: 50, y: 40))
                     .stroke(style:StrokeStyle(lineWidth: 5.0, lineCap: .round)).foregroundColor(.white)
                         
             }.frame(width: 104, height: 104)
@@ -80,7 +80,7 @@ struct blobMelhor: View {
                     .foregroundColor(Color.white)
                 Liquid(samples: 7, period: 5).frame(width: 90, height: 90)
                     .foregroundColor(Color("Laranja Rating"))
-                Line(start: CGPoint(x: 30, y: 52), end: CGPoint(x: 70, y: 52), control: CGPoint(x: 50, y: 52))
+                Line(start: CGPoint(x: 30, y: 52), end: CGPoint(x: 70, y: 52), control: CGPoint(x: 50, y: 65))
                     .stroke(style:StrokeStyle(lineWidth: 5.0, lineCap: .round)).foregroundColor(.white)
                         
             }.frame(width: 104, height: 104)
