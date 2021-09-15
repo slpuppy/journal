@@ -22,7 +22,7 @@ struct ContentView: View {
                 case .home:
                     HomeView(viewRouter: viewRouter)
                 case .collection:
-                    Text("Coleção de sentimentos")
+                   FeelingsCollectionTableView()
                 case .history:
                     Text("Histórico")
                 case .profile:
