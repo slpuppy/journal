@@ -8,6 +8,31 @@
 import SwiftUI
 import Liquid
 
+struct ProfileView: View {
+
+    var body: some View {
+        ScrollView{
+            VStack{
+                
+                Spacer()
+                
+                StatsView()
+
+                Spacer()
+                
+                NotificationSettingsView()
+                
+                Spacer()
+                
+            }.padding()
+            
+        }
+        
+    }
+}
+
+
+
 struct StatsView: View {
     
     var checkins: Int = 30
@@ -74,23 +99,35 @@ struct StatsView: View {
     }
 }
 
-struct ProfileView: View {
-
+struct NotificationSettingsView: View {
+    
+    @State private var turnOnNotifications = false
+    @State private var notificationTime = Date()
+    
     var body: some View {
-        ScrollView{
-            VStack{
-                
-                Spacer()
-                
-                StatsView()
-
-                Spacer()
-                
-            }.padding()
+        VStack{
+            Toggle("Notificações", isOn: $turnOnNotifications)
+                .foregroundColor(Color("AzulEscuro"))
+                .font(.system(size: 20, weight: .medium))
             
-        }
-        
+            if turnOnNotifications {
+                HStack{
+                    DatePicker("Horário do lembrete",
+                               selection: $notificationTime,
+                               displayedComponents: [.hourAndMinute])
+                        .foregroundColor(Color("Cinzão"))
+                        .font(.system(size: 16 ,weight: .medium))
+                }
+            }
+            
+        }.padding()
+        .frame(maxWidth: .infinity)
+        .background(Color(.white))
+        .cornerRadius(12)
+        .shadow(radius: 3)
+        .padding(.bottom)
     }
+    
 }
 
 struct ProfileView_Previews: PreviewProvider {
