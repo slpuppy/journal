@@ -8,22 +8,48 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var journalData: JournalController
+    @EnvironmentObject var controller: JournalController
     
     @StateObject var viewRouter: ViewRouter
-    @State var dataSource = Feeling.shared
+    
+    @State var print = ""
     
     func addFeeling(){
         //Feeling.addUserFeeling(tag: "\(Int.random(in: 1...9999))", type: .outros)
-        dataSource = Feeling.shared
+        let jour = Journal(initialMood: Int.random(in: 1...10))
+        jour.addFeelings(feelings: [
+            controller.feelings[5],
+            controller.feelings[6],
+            controller.feelings[10]
+        ])
+        jour.addText(question: controller.question[0], awnser: "\(Int.random(in: 1...1000))")
+        jour.addText(question: controller.question[1], awnser: "\(Int.random(in: 1...1000))")
+        jour.addText(question: controller.question[2], awnser: "\(Int.random(in: 1...1000))")
+        controller.saveJournal(jour)
+    }
+    
+    func deleteJournal(offsets: IndexSet){
+        print = controller.feelings[offsets.first!].tag
     }
     
     var body: some View {
         NavigationView{
-            List(dataSource) { feeling in
-                Text("\(feeling.tag)")
+            List() {
+                ForEach(controller.journal) {journal in
+                    VStack{
+                        Text("\(journal.date)")
+                        ForEach(journal.dailyTexts) { texts in
+                            HStack{
+                                Text(texts.question.text)
+                                Text(texts.text)
+                            }
+                        }
+                        
+                    }
+                }
+                .onDelete(perform: deleteJournal)
             }
-            .navigationTitle("sample")
+            .navigationTitle(print)
             .navigationBarItems(trailing: Button("AddFeeling"){
                 addFeeling()
             })

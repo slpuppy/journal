@@ -8,11 +8,13 @@
 import Foundation
 
 class JournalController: ObservableObject {
-    var journal = [Journal]()
-    var question = [Question]()
+    @Published var journal = [Journal]()
+    @Published var question = [Question]()
+    @Published var feelings = [Feeling]()
     
-    var userFeelings = [Feeling]()
-    var defaultFeelings = [Feeling]()
+    private var userFeelings = [Feeling]()
+    private var defaultFeelings = [Feeling]()
+    
     
     init() {
         loadShared()
@@ -23,6 +25,7 @@ class JournalController: ObservableObject {
         question = Question.shared
         defaultFeelings = Feeling.shared
         getFeeling()
+        updateFeeling()
     }
     
     
@@ -58,15 +61,10 @@ class JournalController: ObservableObject {
             Feeling(tag: tag, type: type)
         )
         saveFeeling(userFeelings)
+        updateFeeling()
     }
     
-    func addFeeling(tag: String, type: FeelingType){
-        userFeelings.append(
-            Feeling(tag: tag, type: type)
-        )
-    }
-    
-    func saveFeeling(_ value: [Feeling]) {
+    private func saveFeeling(_ value: [Feeling]) {
         do {
             let data = try JSONEncoder().encode(value)
             UserDefaults.standard.set(data, forKey: "savedFeeling")
@@ -77,7 +75,7 @@ class JournalController: ObservableObject {
         }
     }
 
-    func getFeeling() {
+    private func getFeeling() {
         do {
             guard let encoded = UserDefaults.standard.data(forKey: "savedFeeling") else { return }
             userFeelings = try JSONDecoder().decode([Feeling].self, from: encoded)
@@ -86,6 +84,10 @@ class JournalController: ObservableObject {
             print(error)
             fatalError()
         }
+    }
+    
+    private func updateFeeling(){
+        feelings = userFeelings + defaultFeelings
     }
     
 

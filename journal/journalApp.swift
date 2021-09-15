@@ -9,13 +9,11 @@ import SwiftUI
 
 @main
 struct journalApp: App {
-    @ObservedObject var journal = JournalController()
-    
-    
+    @ObservedObject var controller = JournalController()
     @StateObject var viewRouter = ViewRouter()
     var body: some Scene {
         WindowGroup {
-            ContentView(viewRouter: viewRouter).environmentObject(journal)
+            ContentView(viewRouter: viewRouter).environmentObject(controller)
         }
     }
 }

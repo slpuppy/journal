@@ -22,7 +22,7 @@ class Journal: Codable, Identifiable {
     var dailyTexts = [DailyTexts]()
     var feelings = [Feeling]()
     
-    class DailyTexts: Codable {
+    class DailyTexts: Codable, Identifiable {
         var ID = UUID()
         var question: Question
         var text: String
