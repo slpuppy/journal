@@ -29,10 +29,10 @@ struct QuestionView: View {
                 
             }
             TextField("Título", text: $reflectionTitle)
-                .font(.custom("SF Pro Display", size: 22))
                 .foregroundColor(Color("Preto"))
+                .font(.system(size: 22.0))
             TextField("Escreva aqui...", text: $reflection)
-                .font(.custom("SF Pro Text Regular", size: 16))
+                .font(.system(size: 16.0))
                 .foregroundColor(Color("Preto"))
             Spacer()
             

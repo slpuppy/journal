@@ -11,7 +11,7 @@ import Liquid
 struct Tags: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .font(.custom("SF Pro Text Regular", size: 15))
+            .font(.system(size: 15.0))
             .foregroundColor(Color("Roxão dark"))
             .padding(.vertical, 7)
             .padding(.horizontal, 10)
@@ -26,7 +26,7 @@ struct Tags: ViewModifier {
 struct TagSelected: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .font(.custom("SF Pro Text Regular", size: 15))
+            .font(.system(size: 15.0))
             .foregroundColor(Color.white)
             .padding(.vertical, 7)
             .padding(.horizontal, 10)
@@ -37,14 +37,14 @@ struct TagSelected: ViewModifier {
 struct SubTitulo: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .font(.custom("SF Compact Display", size: 12))
+            .font(.system(size: 12.0))
             .foregroundColor(Color.gray)
     }
 }
 struct Titulos: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .font(.custom("SF Pro Display Bold", size: 28))
+            .font(.system(size: 28.0))
             .foregroundColor(Color("Roxão dark"))
     }
 }
@@ -52,7 +52,7 @@ struct Titulos: ViewModifier {
 struct TagUsed: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .font(.custom("SF Pro Text Regular", size: 12))
+            .font(.system(size: 12.0))
             .foregroundColor(Color("Roxão dark"))
             .padding(.vertical, 6)
             .padding(.horizontal, 10)
