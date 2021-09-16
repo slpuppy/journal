@@ -16,19 +16,16 @@ struct ContentView: View {
         
         GeometryReader { geometry in
             VStack(spacing: 0){
-                Spacer()
-                
                 switch viewRouter.currentPage {
                 case .home:
                     HomeView(viewRouter: viewRouter)
                 case .collection:
                    FeelingsCollectionTableView()
                 case .history:
-                    Text("Histórico")
+                    HistoryView()
                 case .profile:
                     ProfileView()
                 }
-                
                 
                 TabBar(viewRouter: viewRouter).frame(width: geometry.size.width, height: geometry.size.height / 8)
                 
