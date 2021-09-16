@@ -130,7 +130,7 @@ struct HomeView: View {
 
     
     var body: some View {
-
+        Spacer()
         ScrollView{
             VStack{
                 HStack{
