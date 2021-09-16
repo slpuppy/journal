@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3227378726F127AA00659B79 /* JournalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3227378626F127AA00659B79 /* JournalController.swift */; };
 		327655E126EF89D7003DDB0C /* journalModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327655E026EF89D7003DDB0C /* journalModels.swift */; };
+		4B5F839C26F3C83C0067B11B /* EntryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F839B26F3C83C0067B11B /* EntryCard.swift */; };
+		4B5F839E26F3C8D80067B11B /* DetailedEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5F839D26F3C8D80067B11B /* DetailedEntryView.swift */; };
 		4B75947C26F0E70200A9F8C7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B75947B26F0E70200A9F8C7 /* ProfileView.swift */; };
 		4B75947E26F17DF500A9F8C7 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B75947D26F17DF500A9F8C7 /* CreditsView.swift */; };
 		4B75948026F17E1B00A9F8C7 /* FeedbacksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B75947F26F17E1B00A9F8C7 /* FeedbacksView.swift */; };
@@ -19,6 +21,7 @@
 		4B8DE54A26ED28F1005EBF39 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8DE54926ED28F1005EBF39 /* HomeView.swift */; };
 		4BB443FA26EC0C9C00570206 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8593E626EA4695008C446F /* TabBar.swift */; };
 		4BC3C7EA26E95BE40016E47C /* CheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3C7E926E95BE40016E47C /* CheckButton.swift */; };
+		4BF725D026F27AD200634AB9 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF725CF26F27AD200634AB9 /* HistoryView.swift */; };
 		75713F6526DE51200032C954 /* journalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75713F6426DE51200032C954 /* journalApp.swift */; };
 		75713F6726DE51200032C954 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75713F6626DE51200032C954 /* ContentView.swift */; };
 		75713F6926DE51220032C954 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75713F6826DE51220032C954 /* Assets.xcassets */; };
@@ -35,6 +38,8 @@
 /* Begin PBXFileReference section */
 		3227378626F127AA00659B79 /* JournalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalController.swift; sourceTree = "<group>"; };
 		327655E026EF89D7003DDB0C /* journalModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = journalModels.swift; sourceTree = "<group>"; };
+		4B5F839B26F3C83C0067B11B /* EntryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCard.swift; sourceTree = "<group>"; };
+		4B5F839D26F3C8D80067B11B /* DetailedEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedEntryView.swift; sourceTree = "<group>"; };
 		4B75947B26F0E70200A9F8C7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		4B75947D26F17DF500A9F8C7 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
 		4B75947F26F17E1B00A9F8C7 /* FeedbacksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbacksView.swift; sourceTree = "<group>"; };
@@ -44,6 +49,7 @@
 		4B89032126DFB65800913020 /* MoodTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTrackerView.swift; sourceTree = "<group>"; };
 		4B8DE54926ED28F1005EBF39 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4BC3C7E926E95BE40016E47C /* CheckButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckButton.swift; sourceTree = "<group>"; };
+		4BF725CF26F27AD200634AB9 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		75713F6126DE51200032C954 /* journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = journal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75713F6426DE51200032C954 /* journalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = journalApp.swift; sourceTree = "<group>"; };
 		75713F6626DE51200032C954 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,6 +94,7 @@
 				4B8593E626EA4695008C446F /* TabBar.swift */,
 				4B8593E826EA705F008C446F /* ViewRouter.swift */,
 				7591F1DD26F21DFB00AEDF78 /* EmotionCollectionDataManager.swift */,
+				4B5F839B26F3C83C0067B11B /* EntryCard.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -106,6 +113,8 @@
 				B33BD6E126EAF23F005913D2 /* ProgressBarView.swift */,
 				4B8DE54926ED28F1005EBF39 /* HomeView.swift */,
 				7591F1DB26F21DBF00AEDF78 /* FeelingsCollectionTableView.swift */,
+				4BF725CF26F27AD200634AB9 /* HistoryView.swift */,
+				4B5F839D26F3C8D80067B11B /* DetailedEntryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -229,6 +238,7 @@
 				4B75947E26F17DF500A9F8C7 /* CreditsView.swift in Sources */,
 				4B89032226DFB65800913020 /* MoodTrackerView.swift in Sources */,
 				4B75947C26F0E70200A9F8C7 /* ProfileView.swift in Sources */,
+				4BF725D026F27AD200634AB9 /* HistoryView.swift in Sources */,
 				7591F1DE26F21DFB00AEDF78 /* EmotionCollectionDataManager.swift in Sources */,
 				75713F6726DE51200032C954 /* ContentView.swift in Sources */,
 				4B75948026F17E1B00A9F8C7 /* FeedbacksView.swift in Sources */,
@@ -242,8 +252,10 @@
 				B3010C0126F0D14300FB5827 /* QuestionView.swift in Sources */,
 				B33BD6DE26EA33F6005913D2 /* TagSelectionView.swift in Sources */,
 				B3010C0526F14C3A00FB5827 /* RatingView.swift in Sources */,
+				4B5F839E26F3C8D80067B11B /* DetailedEntryView.swift in Sources */,
 				B33BD6DE26EA33F6005913D2 /* TagSelectionView.swift in Sources */,
 				7591F1DC26F21DBF00AEDF78 /* FeelingsCollectionTableView.swift in Sources */,
+				4B5F839C26F3C83C0067B11B /* EntryCard.swift in Sources */,
 				B33BD6E226EAF23F005913D2 /* ProgressBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

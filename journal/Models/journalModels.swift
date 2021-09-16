@@ -21,7 +21,10 @@ class Journal: Codable, Identifiable {
     var afterMood: ResultMood
     var dailyTexts = [DailyTexts]()
     var feelings = [Feeling]()
-    
+    var day: String
+    var month: String
+    var year: String
+
     class DailyTexts: Codable, Identifiable {
         var ID = UUID()
         var question: Question
@@ -37,6 +40,22 @@ class Journal: Codable, Identifiable {
         mood = initialMood
         date = Date()
         afterMood = .indefinido
+        
+        let dayFormatter = DateFormatter()
+        dayFormatter.dateFormat = "dd"
+        day = dayFormatter.string(from: self.date)
+
+        let monthFormatter = DateFormatter()
+        
+        monthFormatter.locale = Locale(identifier: "pt-BR")
+        
+        monthFormatter.setLocalizedDateFormatFromTemplate("MMMM")
+        month = monthFormatter.string(from: self.date).capitalized
+
+        let yearFormatter = DateFormatter()
+        yearFormatter.dateFormat = "YYYY"
+        year = yearFormatter.string(from: self.date)
+        
     }
     
     public func addText(question: Question, awnser: String){
@@ -52,6 +71,28 @@ class Journal: Codable, Identifiable {
         self.afterMood = afterMood
     }
     
+    public func setDate(day: String, month: String, year: String) {
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        
+        let stringDate = day + "-" + month + "-" + year
+        
+        self.date = formatter.date(from: stringDate)!
+        
+        let dayFormatter = DateFormatter()
+        dayFormatter.dateFormat = "dd"
+        self.day = dayFormatter.string(from: self.date)
+
+        let monthFormatter = DateFormatter()
+        monthFormatter.locale = Locale(identifier: "pt-BR")
+        monthFormatter.dateFormat = "MMMM"
+        self.month = monthFormatter.string(from: self.date).capitalized
+
+        let yearFormatter = DateFormatter()
+        yearFormatter.dateFormat = "YYYY"
+        self.year = yearFormatter.string(from: self.date)
+    }
    
 }
 
