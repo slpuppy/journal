@@ -11,6 +11,7 @@ import Liquid
 struct ProfileView: View {
 
     var body: some View {
+        Spacer()
         ScrollView{
             VStack{
                 
