@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WrappingStack
 
 struct DetailedEntryView: View {
     var journal: Journal
@@ -34,9 +35,9 @@ struct DetailedEntryView: View {
                 HStack{
                     VStack(alignment: .leading){
                         Text("EMOÇÕES").font(.caption).foregroundColor(Color("CinzaHistorico"))
-                        HStack{
+                        WrappingHStack(alignment: .leading) {
                             ForEach(journal.feelings){feeling in
-                                Text(feeling.tag).modifier(TagUsed())
+                                Text(feeling.tag).modifier(TagUsed()).padding(.trailing,5)
                             }
                         }
                     }

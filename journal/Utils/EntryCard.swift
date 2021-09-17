@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WrappingStack
 
 struct EntryCard: View {
     
@@ -23,10 +24,10 @@ struct EntryCard: View {
             }.padding()
             
             VStack(alignment: . leading){
-                HStack{
+                WrappingHStack(alignment: .leading) {
                     ForEach(journal.feelings) { feeling in
-                        Text(feeling.tag).modifier(TagUsed())
-                        
+                        Text(feeling.tag).modifier(TagUsed()).padding(.trailing,5)
+
                     }
                 }
                 
