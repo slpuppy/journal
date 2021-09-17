@@ -49,8 +49,8 @@ struct ExampleOfProgress: View {
 
 struct ProgressBarView_Previews: PreviewProvider {
     static var previews: some View {
-        ExampleOfProgress()
-        //ProgressBarView()
+        //ExampleOfProgress()
+        ProgressBarView(value: 1)
     }
 }
 
