@@ -6,31 +6,31 @@
 //
 
 import SwiftUI
+import WrappingStack
 
 struct TagSelectionView: View {
-
-    @State var reflection: String = ""
-    @State var reflectionTitle: String = ""
+    
+    @ObservedObject var dataSource = ListDataSource()
+    let humors = ["Amor", "Vigilância", "Pessimismo","Amor", "Vigilância", "Pessimismo","Amor", "Vigilância", "Pessimismo", "+" ]
     
     var body: some View {
     
         VStack(alignment: .leading){
             VStack(alignment: .leading){
                 Text("O que você está sentindo?")
+                    .fontWeight(.bold)
                     .modifier(Titulos())
                     .padding(.bottom)
                 Text("ALEGRIA")
                     .modifier(SubTitulo())
-                HStack{
-                    Text("Amor")
-                        .modifier(Tags())
-                    Text("Vigilância")
-                        .modifier(TagSelected())
-                    Text("Pessimismo")
-                        .modifier(Tags())
-                        
-                }.padding(.bottom, 10)
-                
+                    WrappingHStack(id: \.self, alignment: .leading) {
+                                ForEach(humors, id: \.self) { humor in
+                                    Text(humor)
+                                        .modifier(Tags())
+                                        .padding(3)
+                                }
+                    }
+                    
                 
             }
             

@@ -6,26 +6,27 @@
 //
 
 import SwiftUI
+import WrappingStack
 
 
 struct QuestionView: View {
     @State var reflection: String = ""
     @State var reflectionTitle: String = ""
+    let humors = ["Amor", "Vigilância", "Pessimismo","Amor", "Vigilância"]
     
     var body: some View {
         VStack(alignment: .leading){
             VStack{
                 Text("Como foi seu dia?")
+                    .fontWeight(.bold)
                     .modifier(Titulos())
-                HStack{
-                    Text("Amor")
-                        .modifier(TagUsed())
-                    Text("Vigilância")
-                        .modifier(TagUsed())
-                    Text("Pessimismo")
-                        .modifier(TagUsed())
-                        
-                }.padding(.bottom, 30)
+                WrappingHStack(id: \.self, alignment: .leading) {
+                            ForEach(humors, id: \.self) { humor in
+                                Text(humor)
+                                    .modifier(TagUsed())
+                                    .padding(3)
+                            }
+                }
                 
             }
             TextField("Título", text: $reflectionTitle)

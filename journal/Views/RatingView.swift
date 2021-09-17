@@ -12,12 +12,13 @@ struct RatingView: View {
     var body: some View {
         VStack(){
             Text("Como você está se sentindo depois de escrever?")
+                .fontWeight(.bold)
                 .modifier(Titulos())
             Spacer()
             HStack{
                 blobPior()
                 blobIgual()
-                blobMelhor()
+                blobMelhorTapped()
             }
             Spacer()
             ZStack{
@@ -26,7 +27,6 @@ struct RatingView: View {
                 Image(systemName: "checkmark")
                     .font(.system(size: 20.0))
                     .foregroundColor(.white)
-                    
             }.frame(width: 60, height: 60)
             .padding(.bottom)
         }.padding(.top)
@@ -77,6 +77,7 @@ struct blobMelhor: View {
             ZStack{
                 Circle()
                     .foregroundColor(Color.white)
+                
                 Liquid(samples: 7, period: 5).frame(width: 90, height: 90)
                     .foregroundColor(Color("Laranja Rating"))
                 Line(start: CGPoint(x: 30, y: 52), end: CGPoint(x: 70, y: 52), control: CGPoint(x: 50, y: 65))
@@ -84,6 +85,28 @@ struct blobMelhor: View {
                         
             }.frame(width: 104, height: 104)
             Text("Melhor")
+                .font(.system(size: 15.0))
+                .foregroundColor(.gray)
+        }
+        
+    }
+}
+struct blobMelhorTapped: View {
+    var body: some View{
+        VStack{
+            ZStack{
+                Circle()
+                    .stroke(Color("AzulEscuro"), lineWidth: 1)
+                    .foregroundColor(Color.white)
+                
+                Liquid(samples: 7, period: 5).frame(width: 90, height: 90)
+                    .foregroundColor(Color("Laranja Rating"))
+                Line(start: CGPoint(x: 30, y: 52), end: CGPoint(x: 70, y: 52), control: CGPoint(x: 50, y: 65))
+                    .stroke(style:StrokeStyle(lineWidth: 5.0, lineCap: .round)).foregroundColor(.white)
+                        
+            }.frame(width: 104, height: 104)
+            Text("Melhor")
+                .bold()
                 .font(.system(size: 15.0))
                 .foregroundColor(.gray)
         }
