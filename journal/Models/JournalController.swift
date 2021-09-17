@@ -8,6 +8,7 @@
 import Foundation
 
 class JournalController: ObservableObject {
+    
     @Published var journal = [Journal]()
     @Published var question = [Question]()
     @Published var feelings = [Feeling]()

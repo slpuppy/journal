@@ -11,11 +11,13 @@ struct FeelingsCollectionTableView: View {
     
     @ObservedObject var dataSource = ListDataSource()
     
+    var controller = JournalController()
+    
     var body: some View {
         
         ScrollView{
             LazyVStack {
-                ForEach(dataSource.rowModels) { model in
+                ForEach(controller.feelings) { model in
                     FeelingRow(model: model)
                 }.padding(.leading, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                 .padding(.trailing, 10)
@@ -26,7 +28,7 @@ struct FeelingsCollectionTableView: View {
 
 struct FeelingRow: View {
     
-    @State var model: Feeling
+    @StateObject var model: Feeling
     
     var body: some View{
         
