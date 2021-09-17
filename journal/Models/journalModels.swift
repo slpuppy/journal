@@ -300,7 +300,7 @@ class Feeling:  Codable, Identifiable, ObservableObject {
     ]
 }
 
-enum FeelingType: String, Codable {
+enum FeelingType: String, Codable, CaseIterable {
     case alegria
     case tristeza
     case antecipacao

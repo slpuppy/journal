@@ -19,6 +19,8 @@
 		4B8DE54A26ED28F1005EBF39 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8DE54926ED28F1005EBF39 /* HomeView.swift */; };
 		4BB443FA26EC0C9C00570206 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8593E626EA4695008C446F /* TabBar.swift */; };
 		4BC3C7EA26E95BE40016E47C /* CheckButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3C7E926E95BE40016E47C /* CheckButton.swift */; };
+		4BDC9E0E26F4FA2D0082BC3B /* FeelingsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDC9E0D26F4FA2D0082BC3B /* FeelingsCollectionView.swift */; };
+		4BDC9E1126F4FA4D0082BC3B /* ACarousel in Frameworks */ = {isa = PBXBuildFile; productRef = 4BDC9E1026F4FA4D0082BC3B /* ACarousel */; };
 		75713F6526DE51200032C954 /* journalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75713F6426DE51200032C954 /* journalApp.swift */; };
 		75713F6726DE51200032C954 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75713F6626DE51200032C954 /* ContentView.swift */; };
 		75713F6926DE51220032C954 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75713F6826DE51220032C954 /* Assets.xcassets */; };
@@ -44,6 +46,7 @@
 		4B89032126DFB65800913020 /* MoodTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTrackerView.swift; sourceTree = "<group>"; };
 		4B8DE54926ED28F1005EBF39 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4BC3C7E926E95BE40016E47C /* CheckButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckButton.swift; sourceTree = "<group>"; };
+		4BDC9E0D26F4FA2D0082BC3B /* FeelingsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingsCollectionView.swift; sourceTree = "<group>"; };
 		75713F6126DE51200032C954 /* journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = journal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75713F6426DE51200032C954 /* journalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = journalApp.swift; sourceTree = "<group>"; };
 		75713F6626DE51200032C954 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BDC9E1126F4FA4D0082BC3B /* ACarousel in Frameworks */,
 				4B89032026DFA3F200913020 /* Liquid in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,6 +110,7 @@
 				B33BD6E126EAF23F005913D2 /* ProgressBarView.swift */,
 				4B8DE54926ED28F1005EBF39 /* HomeView.swift */,
 				7591F1DB26F21DBF00AEDF78 /* FeelingsCollectionTableView.swift */,
+				4BDC9E0D26F4FA2D0082BC3B /* FeelingsCollectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 			name = journal;
 			packageProductDependencies = (
 				4B89031F26DFA3F200913020 /* Liquid */,
+				4BDC9E1026F4FA4D0082BC3B /* ACarousel */,
 			);
 			productName = journal;
 			productReference = 75713F6126DE51200032C954 /* journal.app */;
@@ -197,6 +203,7 @@
 			mainGroup = 75713F5826DE51200032C954;
 			packageReferences = (
 				4B89031E26DFA3F200913020 /* XCRemoteSwiftPackageReference "liquid" */,
+				4BDC9E0F26F4FA4D0082BC3B /* XCRemoteSwiftPackageReference "ACarousel" */,
 			);
 			productRefGroup = 75713F6226DE51200032C954 /* Products */;
 			projectDirPath = "";
@@ -229,6 +236,7 @@
 				4B75947E26F17DF500A9F8C7 /* CreditsView.swift in Sources */,
 				4B89032226DFB65800913020 /* MoodTrackerView.swift in Sources */,
 				4B75947C26F0E70200A9F8C7 /* ProfileView.swift in Sources */,
+				4BDC9E0E26F4FA2D0082BC3B /* FeelingsCollectionView.swift in Sources */,
 				7591F1DE26F21DFB00AEDF78 /* EmotionCollectionDataManager.swift in Sources */,
 				75713F6726DE51200032C954 /* ContentView.swift in Sources */,
 				4B75948026F17E1B00A9F8C7 /* FeedbacksView.swift in Sources */,
@@ -443,6 +451,14 @@
 				minimumVersion = 0.0.2;
 			};
 		};
+		4BDC9E0F26F4FA4D0082BC3B /* XCRemoteSwiftPackageReference "ACarousel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JWAutumn/ACarousel.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -450,6 +466,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4B89031E26DFA3F200913020 /* XCRemoteSwiftPackageReference "liquid" */;
 			productName = Liquid;
+		};
+		4BDC9E1026F4FA4D0082BC3B /* ACarousel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4BDC9E0F26F4FA4D0082BC3B /* XCRemoteSwiftPackageReference "ACarousel" */;
+			productName = ACarousel;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

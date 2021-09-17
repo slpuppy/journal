@@ -11,13 +11,15 @@ struct FeelingsCollectionTableView: View {
     
     @ObservedObject var dataSource = ListDataSource()
     
+    var category: FeelingType
+    
     var controller = JournalController()
     
     var body: some View {
         
         ScrollView{
             LazyVStack {
-                ForEach(controller.feelings) { model in
+                ForEach(controller.feelings.filter({ $0.type == category})) { model in
                     FeelingRow(model: model)
                 }.padding(.leading, /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                 .padding(.trailing, 10)
@@ -111,21 +113,21 @@ struct FeelingRow: View {
                         }
                     }
                 }.cornerRadius(15)
-                .shadow(color: Color(.black).opacity(0.1), radius: 13, x: 0.0, y: 4.0)
+                .shadow(color: Color(.black).opacity(0.1), radius: 4, x: 0.0, y: 4.0)
                 
             }
             
             
-        }
+        }//.padding(.top)
         
     }
 }
 
-struct FeelingsCollection_Previews: PreviewProvider {
-    static var previews: some View {
-        FeelingsCollectionTableView()
-    }
-}
+//struct FeelingsCollection_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FeelingsCollectionTableView()
+//    }
+//}
 
 
 
