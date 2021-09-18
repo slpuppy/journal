@@ -13,13 +13,15 @@ struct ContentView: View {
     
     var body: some View {
         
+    
+        
         GeometryReader { geometry in
             VStack(spacing: 0){
                 switch viewRouter.currentPage {
                 case .home:
                     HomeView(viewRouter: viewRouter)
                 case .collection:
-                   FeelingsCollectionTableView()
+                   FeelingsCollectionView()
                 case .history:
                     HistoryView()
                 case .profile:
@@ -32,7 +34,8 @@ struct ContentView: View {
             .edgesIgnoringSafeArea(.bottom)
             //MoodTrackerView()
         }
-    }
+    
+}
 }
 
 //struct ContentView_Previews: PreviewProvider {
