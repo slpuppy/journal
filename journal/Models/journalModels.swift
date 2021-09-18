@@ -303,8 +303,8 @@ class Feeling:  Codable, Identifiable {
     ]
 }
 
-enum FeelingType: String, Codable {
-    case alegria
+enum FeelingType: String, Codable, CustomStringConvertible {
+    case alegria 
     case tristeza
     case antecipacao
     case surpresa
@@ -313,4 +313,18 @@ enum FeelingType: String, Codable {
     case raiva
     case medo
     case outros
+    var description: String{
+        switch self {
+        case .alegria : return "ALEGRIA"
+        case .tristeza : return "TRISTEZA"
+        case .antecipacao : return "ANTECIPAÇÃO"
+        case .surpresa : return "SURPRESA"
+        case .nojo : return "NOJO"
+        case .confianca : return "CONFIANÇA"
+        case .raiva : return "RAIVA"
+        case .medo : return "MEDO"
+        case .outros : return "OUTROS"
+        }
+    }
+    
 }
