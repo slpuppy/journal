@@ -22,7 +22,8 @@ struct Line: Shape {
 
 struct MoodTrackerView: View {
     @State var sliderValue: Double = 5
-    
+    @StateObject var checkInVR = CheckInVR()
+    @State private var IsPresented = false
     var body: some View {
         VStack{
             
@@ -88,17 +89,18 @@ struct MoodTrackerView: View {
             
             Slider(value: $sliderValue, in: 0...10).accentColor(.gray).padding(30)
             
-            CheckButton(buttonColor: Color("AzulEscuro"),
-                        checkColor: Color("Bege")).frame(width: 70, height: 70)
-            
-            Spacer()
+//            CheckButton(buttonColor: Color("AzulEscuro"),
+//                        checkColor: Color("Bege")).frame(width: 70, height: 70).onTapGesture {
+//                            checkInVR.currentPage = .rating
+//                        }
+                        Spacer()
         }.background(Color("BackgroundColor").ignoresSafeArea())
         
     }
 }
 
-struct MoodTrackerView_Previews: PreviewProvider {
-    static var previews: some View {
-        MoodTrackerView()
-    }
-}
+//struct MoodTrackerView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MoodTrackerView()
+//    }
+//}

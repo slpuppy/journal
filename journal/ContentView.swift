@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var controller: JournalController
-    
     @StateObject var viewRouter: ViewRouter
     
     var body: some View {
@@ -18,19 +17,16 @@ struct ContentView: View {
         
         GeometryReader { geometry in
             VStack(spacing: 0){
-                Spacer()
-                
                 switch viewRouter.currentPage {
                 case .home:
                     HomeView(viewRouter: viewRouter)
                 case .collection:
                    FeelingsCollectionView()
                 case .history:
-                    Text("Histórico")
+                    HistoryView()
                 case .profile:
                     ProfileView()
                 }
-                
                 
                 TabBar(viewRouter: viewRouter).frame(width: geometry.size.width, height: geometry.size.height / 8)
                 

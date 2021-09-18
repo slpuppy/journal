@@ -21,7 +21,11 @@ class Journal: Codable, Identifiable {
     var afterMood: ResultMood
     var dailyTexts = [DailyTexts]()
     var feelings = [Feeling]()
-    
+    var day: String
+    var month: String
+    var year: String
+    var dateString: String
+
     class DailyTexts: Codable, Identifiable {
         var ID = UUID()
         var question: Question
@@ -37,6 +41,27 @@ class Journal: Codable, Identifiable {
         mood = initialMood
         date = Date()
         afterMood = .indefinido
+        
+        let dayFormatter = DateFormatter()
+        dayFormatter.dateFormat = "dd"
+        day = dayFormatter.string(from: self.date)
+
+        let monthFormatter = DateFormatter()
+        
+        monthFormatter.locale = Locale(identifier: "pt-BR")
+        
+        monthFormatter.setLocalizedDateFormatFromTemplate("MMMM")
+        month = monthFormatter.string(from: self.date).capitalized
+
+        let yearFormatter = DateFormatter()
+        yearFormatter.dateFormat = "YYYY"
+        year = yearFormatter.string(from: self.date)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/YYYY"
+        dateString = dateFormatter.string(from: self.date)
+        
+
     }
     
     public func addText(question: Question, awnser: String){
@@ -52,6 +77,33 @@ class Journal: Codable, Identifiable {
         self.afterMood = afterMood
     }
     
+    public func setDate(day: String, month: String, year: String) {
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        
+        let stringDate = day + "-" + month + "-" + year
+        
+        self.date = formatter.date(from: stringDate)!
+        
+        let dayFormatter = DateFormatter()
+        dayFormatter.dateFormat = "dd"
+        self.day = dayFormatter.string(from: self.date)
+
+        let monthFormatter = DateFormatter()
+        monthFormatter.locale = Locale(identifier: "pt-BR")
+        monthFormatter.dateFormat = "MMMM"
+        self.month = monthFormatter.string(from: self.date).capitalized
+
+        let yearFormatter = DateFormatter()
+        yearFormatter.dateFormat = "YYYY"
+        self.year = yearFormatter.string(from: self.date)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/YYYY"
+        dateString = dateFormatter.string(from: self.date)
+
+    }
    
 }
 
@@ -129,176 +181,172 @@ class Feeling:  Codable, Identifiable, ObservableObject {
     
     
     static var shared = [
-        Feeling(tag: "amoros@",
+        Feeling(tag: "Amor",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .alegria,
                 isExpanded: false),
        
-        Feeling(tag: "otimista",
+        Feeling(tag: "Otimismo",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .alegria,
                 isExpanded: false),
        
-        Feeling(tag: "extasiad@",
+        Feeling(tag: "Êxtase",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .alegria,
                 isExpanded: false),
         
-        Feeling(tag: "alegre",
+        Feeling(tag: "Alegria",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .alegria,
                 isExpanded: false),
        
-        Feeling(tag: "seren@",
+        Feeling(tag: "Serenidade",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .alegria,
                 isExpanded: false),
         
-        Feeling(tag: "luto",
+        Feeling(tag: "Luto",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .tristeza,
                 isExpanded: false),
         
-        Feeling(tag: "triste",
+        Feeling(tag: "Tristeza",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .tristeza,
                 isExpanded: false),
        
-        Feeling(tag: "melancolic@",
+        Feeling(tag: "Melancolia",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .tristeza,
                 isExpanded: false),
         
-        Feeling(tag: "descepcionad@",
+        Feeling(tag: "Decepção",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .tristeza,
                 isExpanded: false),
         
-        Feeling(tag: "interessad@",
+        Feeling(tag: "Interesse",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .antecipacao,
                 isExpanded: false),
         
-        Feeling(tag: "ansios@",
+        Feeling(tag: "Ansiedade",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .antecipacao,
                 isExpanded: false),
         
-        Feeling(tag: "vigilante",
-                text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
-                type: .antecipacao,
-                isExpanded: false),
-        
-        Feeling(tag: "maravilhad@",
+        Feeling(tag: "Encanto",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .surpresa,
                 isExpanded: false),
         
-        Feeling(tag: "surpres@",
+        Feeling(tag: "Surpresa",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .surpresa,
                 isExpanded: false),
         
-        Feeling(tag: "distraid@",
+        Feeling(tag: "Distração",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .surpresa,
                 isExpanded: false),
         
-        Feeling(tag: "repugnancia",
+        Feeling(tag: "Repugnância",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .nojo,
                 isExpanded: false),
         
-        Feeling(tag: "enojad@",
+        Feeling(tag: "Nojo",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .nojo,
                 isExpanded: false),
         
-        Feeling(tag: "entediad@",
+        Feeling(tag: "Tédio",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .nojo,
                 isExpanded: false),
-        Feeling(tag: "adminirad@",
+        Feeling(tag: "Admiração",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .confianca,
                 isExpanded: false),
         
-        Feeling(tag: "confiante",
+        Feeling(tag: "Confiança",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .confianca,
                 isExpanded: false),
         
-        Feeling(tag: "aceit@",
+        Feeling(tag: "Aceitação",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .confianca,
                 isExpanded: false),
        
-        Feeling(tag: "irad@",
+        Feeling(tag: "Ira",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .raiva,
                 isExpanded: false),
         
-        Feeling(tag: "irritad@",
+        Feeling(tag: "Raiva",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .raiva,
                 isExpanded: false),
         
-        Feeling(tag: "aborrecid@",
+        Feeling(tag: "Aborrecimento",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .raiva,
                 isExpanded: false),
         
-        Feeling(tag: "aterrorizad@",
+        Feeling(tag: "Terror",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .medo,
                 isExpanded: false),
        
-        Feeling(tag: "medo",
+        Feeling(tag: "Medo",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .medo,
                 isExpanded: false),
        
-        Feeling(tag: "apreenciv@",
+        Feeling(tag: "Apreensão",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .medo,
                 isExpanded: false),
         
-        Feeling(tag: "intimidad@",
+        Feeling(tag: "Temor",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .medo,
                 isExpanded: false),
         
-        Feeling(tag: "culpad@",
+        Feeling(tag: "Culpa",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .outros,
                 isExpanded: false),
         
-        Feeling(tag: "orgulhos@",
+        Feeling(tag: "Orgulho",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .outros,
                 isExpanded: false),
         
-        Feeling(tag: "desesperad@",
+        Feeling(tag: "Desespero",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .outros,
                 isExpanded: false),
         
-        Feeling(tag: "inveja",
+        Feeling(tag: "Inveja",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .outros,
                 isExpanded: false),
         
-        Feeling(tag: "pessimista",
+        Feeling(tag: "Pessimismo",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .outros,
                 isExpanded: false),
         
-        Feeling(tag: "apatic@",
+        Feeling(tag: "Apatia",
                 text: "A alegria é um sentimento de plenitude e satisfação interior. Ela pode te ajudar a prestar atenção no que está bom na sua vida, e te lembrar do que mais importa pra você.",
                 type: .outros,
                 isExpanded: false)
     ]
 }
+
 
 enum FeelingType: String, Codable, CaseIterable {
     case alegria = "Alegria"
@@ -310,4 +358,21 @@ enum FeelingType: String, Codable, CaseIterable {
     case raiva = "Raiva"
     case medo = "Medo"
     case outros = "Outros"
+
+
+    var description: String{
+        switch self {
+        case .alegria : return "ALEGRIA"
+        case .tristeza : return "TRISTEZA"
+        case .antecipacao : return "ANTECIPAÇÃO"
+        case .surpresa : return "SURPRESA"
+        case .nojo : return "NOJO"
+        case .confianca : return "CONFIANÇA"
+        case .raiva : return "RAIVA"
+        case .medo : return "MEDO"
+        case .outros : return "OUTROS"
+        }
+    }
+    
+
 }

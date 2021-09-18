@@ -26,7 +26,7 @@ struct ProgressBarView: View {
         .frame(maxHeight: height)
         .padding(.horizontal, 20)
         .padding(.vertical, 4)
-        //.background(Color("BackgroundColor").ignoresSafeArea())
+        .background(Color("BackgroundColor").ignoresSafeArea())
     }
 
 }
@@ -49,8 +49,8 @@ struct ExampleOfProgress: View {
 
 struct ProgressBarView_Previews: PreviewProvider {
     static var previews: some View {
-        ExampleOfProgress()
-        //ProgressBarView()
+        //ExampleOfProgress()
+        ProgressBarView(value: 1)
     }
 }
 
