@@ -132,53 +132,20 @@ class Question: Codable, Identifiable {
     }
 }
 
-class Feeling:  Codable, Identifiable, ObservableObject {
+class Feeling:  Codable, Identifiable {
 
-    enum CodingKeys: CodingKey {
-        
-        case text
-        case isExpanded
-        case tag
-        case type
-        
-        
-    }
-    
     var ID = UUID()
     let tag: String
-    @Published var text: String
+    let text: String
     let type: FeelingType
-    @Published var isExpanded: Bool
+    var isExpanded: Bool
     
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        text = try container.decode(String.self, forKey: .text)
-       isExpanded = try container.decode(Bool.self, forKey: .isExpanded)
-       tag = try container.decode(String.self, forKey: .tag)
-        type = try container.decode(FeelingType.self, forKey: .type)
-        
-}
-    
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(text, forKey: .text)
-        try container.encode(isExpanded, forKey: .isExpanded)
-        try container.encode(tag, forKey: .tag)
-        try container.encode(type, forKey: .type)
-    }
-    
-   
-    
- init(tag: String, text: String, type: FeelingType, isExpanded: Bool) {
+    init(tag: String, text: String, type: FeelingType, isExpanded: Bool) {
         self.tag = tag
         self.type = type
         self.text = text
         self.isExpanded = isExpanded
     }
-    
-    
-    
-    
     
     static var shared = [
         Feeling(tag: "Amor",
@@ -347,19 +314,16 @@ class Feeling:  Codable, Identifiable, ObservableObject {
     ]
 }
 
-
-enum FeelingType: String, Codable, CaseIterable {
-    case alegria = "Alegria"
-    case tristeza = "Tristeza"
-    case antecipacao = "Antecipação"
-    case surpresa = "Surpresa"
-    case nojo = "Nojo"
-    case confianca = "Confiança"
-    case raiva = "Raiva"
-    case medo = "Medo"
-    case outros = "Outros"
-
-
+enum FeelingType: String, Codable, CustomStringConvertible {
+    case alegria 
+    case tristeza
+    case antecipacao
+    case surpresa
+    case nojo
+    case confianca
+    case raiva
+    case medo
+    case outros
     var description: String{
         switch self {
         case .alegria : return "ALEGRIA"
@@ -374,5 +338,4 @@ enum FeelingType: String, Codable, CaseIterable {
         }
     }
     
-
 }
