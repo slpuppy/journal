@@ -35,6 +35,7 @@
 		B33BD6DE26EA33F6005913D2 /* TagSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33BD6DD26EA33F6005913D2 /* TagSelectionView.swift */; };
 		B33BD6E226EAF23F005913D2 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33BD6E126EAF23F005913D2 /* ProgressBarView.swift */; };
 		B3FC276C26F6653E00CC4C4F /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FC276B26F6653E00CC4C4F /* CheckInView.swift */; };
+		B3FC277026F684A600CC4C4F /* CheckInVR.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FC276F26F684A600CC4C4F /* CheckInVR.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		B33BD6DD26EA33F6005913D2 /* TagSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSelectionView.swift; sourceTree = "<group>"; };
 		B33BD6E126EAF23F005913D2 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		B3FC276B26F6653E00CC4C4F /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
+		B3FC276F26F684A600CC4C4F /* CheckInVR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInVR.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				4B8593E826EA705F008C446F /* ViewRouter.swift */,
 				7591F1DD26F21DFB00AEDF78 /* EmotionCollectionDataManager.swift */,
 				4B5F839B26F3C83C0067B11B /* EntryCard.swift */,
+				B3FC276F26F684A600CC4C4F /* CheckInVR.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				4B75947E26F17DF500A9F8C7 /* CreditsView.swift in Sources */,
 				4B89032226DFB65800913020 /* MoodTrackerView.swift in Sources */,
 				4B75947C26F0E70200A9F8C7 /* ProfileView.swift in Sources */,
+				B3FC277026F684A600CC4C4F /* CheckInVR.swift in Sources */,
 				4BF725D026F27AD200634AB9 /* HistoryView.swift in Sources */,
 				7591F1DE26F21DFB00AEDF78 /* EmotionCollectionDataManager.swift in Sources */,
 				75713F6726DE51200032C954 /* ContentView.swift in Sources */,
