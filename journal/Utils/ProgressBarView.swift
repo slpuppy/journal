@@ -26,7 +26,7 @@ struct ProgressBarView: View {
         .frame(maxHeight: height)
         .padding(.horizontal, 20)
         .padding(.vertical, 4)
-        //.background(Color("BackgroundColor").ignoresSafeArea())
+        .background(Color("BackgroundColor").ignoresSafeArea())
     }
 
 }

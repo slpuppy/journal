@@ -11,7 +11,7 @@ class JournalController: ObservableObject {
     @Published var journal = [Journal]()
     @Published var question = [Question]()
     @Published var feelings = [Feeling]()
-    
+    let feelingTypes = [FeelingType.alegria, FeelingType.tristeza, FeelingType.antecipacao, FeelingType.surpresa, FeelingType.nojo, FeelingType.confianca, FeelingType.raiva, FeelingType.medo, FeelingType.outros]
     private var userFeelings = [Feeling]()
     private var defaultFeelings = [Feeling]()
     

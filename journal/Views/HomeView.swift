@@ -127,7 +127,7 @@ struct HistoryCardView: View {
 struct HomeView: View {
     var userName: String = "Joãozinho"
     @StateObject var viewRouter: ViewRouter
-
+    @State private var CheckInIsPresented = false
     
     var body: some View {
         Spacer()
@@ -138,7 +138,9 @@ struct HomeView: View {
                     Spacer()
                 }.padding()
                 
-                CheckInCardView()
+                CheckInCardView().onTapGesture {
+                    CheckInIsPresented.toggle()
+                }.fullScreenCover(isPresented: $CheckInIsPresented, content: CheckInView.init)
                 
                 CollectionCardView().onTapGesture {
                     viewRouter.currentPage = .collection
