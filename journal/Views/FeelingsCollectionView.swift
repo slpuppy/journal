@@ -10,39 +10,63 @@ import ACarousel
 
 struct FeelingsCollectionView: View {
     
+    
     var body: some View {
-        ACarousel(FeelingType.allCases, id: \.self, isWrap: false){ feeling in
+        
+        
+        ACarousel(FeelingType.allCases, id: \.self, headspace: 5, isWrap: false ){ feeling in
             
             VStack{
-                HStack{
-                    if feeling != .alegria {
-                        Image(systemName: "chevron.left")
-                    }
-                    
-                    Spacer()
-                    
-                    Text(feeling.rawValue)
-                    
-                    Spacer()
-                    
-                    if feeling != .outros {
-                        Image(systemName: "chevron.right")
-                    }
-                }.padding()
+                Text(feeling.rawValue).font(.system(size: 24, weight: .bold, design: .default))
+                    .foregroundColor(Color("Roxão dark"))
+                
                 
                 ScrollView{
-                    Image(feeling.rawValue).resizable().scaledToFit().frame(width: 131)
                     
+                    VStack{
+                        HStack{
+                            ZStack{
+                                Image(systemName: "chevron.left")
+                                    .padding()
+                                    .opacity(0.0)
+                                
+                                if feeling != .alegria {
+                                    Image(systemName: "chevron.left")
+                                        .foregroundColor(Color("Roxão dark"))
+                                        .padding()
+                                }
+                            }.padding()
+                            Spacer()
+                            Image(feeling.rawValue).resizable().scaledToFit()
+                                .padding(.leading, 10)
+                                .padding(.trailing, 10)
+                                .padding(.bottom, 20)
+                            Spacer()
+                            ZStack{
+                                
+                                Image(systemName: "chevron.right")
+                                    .padding()
+                                    .opacity(0.0)
+                                
+                                if feeling != .outros {
+                                    Image(systemName: "chevron.right")
+                                        .foregroundColor(Color("Roxão dark"))
+                                        .padding()
+                                }
+                            }.padding()
+                        }
                     
+                    }
                     FeelingsCollectionTableView(category: feeling).padding(.bottom)
                     
                     Spacer()
                 }
             }
-
         }
+        
     }
 }
+
 
 struct FeelingsCollectionView_Previews: PreviewProvider {
     static var previews: some View {

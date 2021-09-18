@@ -301,13 +301,13 @@ class Feeling:  Codable, Identifiable, ObservableObject {
 }
 
 enum FeelingType: String, Codable, CaseIterable {
-    case alegria
-    case tristeza
-    case antecipacao
-    case surpresa
-    case nojo
-    case confianca
-    case raiva
-    case medo
-    case outros
+    case alegria = "Alegria"
+    case tristeza = "Tristeza"
+    case antecipacao = "Antecipação"
+    case surpresa = "Surpresa"
+    case nojo = "Nojo"
+    case confianca = "Confiança"
+    case raiva = "Raiva"
+    case medo = "Medo"
+    case outros = "Outros"
 }

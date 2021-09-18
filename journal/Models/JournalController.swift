@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class JournalController: ObservableObject {
     
@@ -65,6 +66,40 @@ class JournalController: ObservableObject {
         updateFeeling()
     }
     
+    
+    func updateFeelingInfo(model: Feeling) {
+        
+        var isUser = false
+     
+        for i in 0..<userFeelings.count {
+            
+            if userFeelings[i].ID == model.ID {
+                
+                userFeelings[i] = model
+                
+                saveFeeling(userFeelings)
+                
+                isUser = true
+            }
+        }
+        
+        
+        if !isUser {
+            
+            for i in 0..<feelings.count {
+                
+                if feelings[i].ID == model.ID {
+                    
+                    feelings[i] = model
+                }
+            }
+            
+            
+        }
+        
+        
+    }
+    
     private func saveFeeling(_ value: [Feeling]) {
         do {
             let data = try JSONEncoder().encode(value)
@@ -75,7 +110,7 @@ class JournalController: ObservableObject {
             fatalError()
         }
     }
-
+    
     private func getFeeling() {
         do {
             guard let encoded = UserDefaults.standard.data(forKey: "savedFeeling") else { return }
@@ -91,5 +126,5 @@ class JournalController: ObservableObject {
         feelings = userFeelings + defaultFeelings
     }
     
-
+    
 }

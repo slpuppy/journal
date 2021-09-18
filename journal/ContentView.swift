@@ -14,6 +14,8 @@ struct ContentView: View {
     
     var body: some View {
         
+    
+        
         GeometryReader { geometry in
             VStack(spacing: 0){
                 Spacer()
@@ -36,7 +38,8 @@ struct ContentView: View {
             .edgesIgnoringSafeArea(.bottom)
             //MoodTrackerView()
         }
-    }
+    
+}
 }
 
 //struct ContentView_Previews: PreviewProvider {

@@ -27,6 +27,7 @@
 		75713F6C26DE51220032C954 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75713F6B26DE51220032C954 /* Preview Assets.xcassets */; };
 		7591F1DC26F21DBF00AEDF78 /* FeelingsCollectionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7591F1DB26F21DBF00AEDF78 /* FeelingsCollectionTableView.swift */; };
 		7591F1DE26F21DFB00AEDF78 /* EmotionCollectionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7591F1DD26F21DFB00AEDF78 /* EmotionCollectionDataManager.swift */; };
+		75F9486B26F677A000092CAF /* FeelingTextEditSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F9486A26F677A000092CAF /* FeelingTextEditSheet.swift */; };
 		B3010C0126F0D14300FB5827 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3010C0026F0D14300FB5827 /* QuestionView.swift */; };
 		B3010C0526F14C3A00FB5827 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3010C0426F14C3A00FB5827 /* RatingView.swift */; };
 		B3010C0926F1548700FB5827 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3010C0826F1548700FB5827 /* Modifiers.swift */; };
@@ -55,6 +56,7 @@
 		75713F6D26DE51220032C954 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7591F1DB26F21DBF00AEDF78 /* FeelingsCollectionTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingsCollectionTableView.swift; sourceTree = "<group>"; };
 		7591F1DD26F21DFB00AEDF78 /* EmotionCollectionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionCollectionDataManager.swift; sourceTree = "<group>"; };
+		75F9486A26F677A000092CAF /* FeelingTextEditSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingTextEditSheet.swift; sourceTree = "<group>"; };
 		B3010C0026F0D14300FB5827 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		B3010C0426F14C3A00FB5827 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		B3010C0826F1548700FB5827 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				4B8DE54926ED28F1005EBF39 /* HomeView.swift */,
 				7591F1DB26F21DBF00AEDF78 /* FeelingsCollectionTableView.swift */,
 				4BDC9E0D26F4FA2D0082BC3B /* FeelingsCollectionView.swift */,
+				75F9486A26F677A000092CAF /* FeelingTextEditSheet.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				75713F6526DE51200032C954 /* journalApp.swift in Sources */,
 				B3010C0926F1548700FB5827 /* Modifiers.swift in Sources */,
 				B3010C0126F0D14300FB5827 /* QuestionView.swift in Sources */,
+				75F9486B26F677A000092CAF /* FeelingTextEditSheet.swift in Sources */,
 				B33BD6DE26EA33F6005913D2 /* TagSelectionView.swift in Sources */,
 				B3010C0526F14C3A00FB5827 /* RatingView.swift in Sources */,
 				B33BD6DE26EA33F6005913D2 /* TagSelectionView.swift in Sources */,
