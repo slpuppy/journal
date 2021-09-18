@@ -31,7 +31,7 @@ struct HistoryView: View {
     var years : [String] {
         var array: [String] = []
         
-        for journal in controller.journal{
+        for journal in controller.journal.sorted(by: { $0.date.timeIntervalSince1970 < $1.date.timeIntervalSince1970}){
             if !array.contains(journal.year) {
                 array.append(journal.year)
             }
@@ -48,7 +48,7 @@ struct HistoryView: View {
         
         for year in years {
             
-            for journal in controller.journal.filter({ $0.year == year}){
+            for journal in controller.journal.sorted(by: { $0.date.timeIntervalSince1970 < $1.date.timeIntervalSince1970}).filter({ $0.year == year}){
                 
                 if !array[year]!.contains(journal.month){
                     array[year]!.append(journal.month)
@@ -81,7 +81,7 @@ struct HistoryView: View {
                             .padding(.leading)
                             .padding(.trailing)
                             
-                            ForEach(controller.journal.filter { $0.year == year && $0.month == month}) { journal in
+                            ForEach(controller.journal.sorted(by: { $0.date.timeIntervalSince1970 < $1.date.timeIntervalSince1970}).filter { $0.year == year && $0.month == month}) { journal in
                                 NavigationLink(destination: DetailedEntryView(journal: journal, currentYear: currentYear)){
                                     EntryCard(journal: journal)
                                 }
