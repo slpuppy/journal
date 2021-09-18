@@ -9,6 +9,7 @@ import SwiftUI
 import Liquid
 
 struct RatingView: View {
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         VStack(){
             Text("Como você está se sentindo depois de escrever?")
@@ -27,7 +28,9 @@ struct RatingView: View {
                 Image(systemName: "checkmark")
                     .font(.system(size: 20.0))
                     .foregroundColor(.white)
-            }.frame(width: 60, height: 60)
+            }.frame(width: 60, height: 60).onTapGesture {
+                presentationMode.wrappedValue.dismiss()
+            }
             .padding(.bottom)
         }.padding(.top)
         
