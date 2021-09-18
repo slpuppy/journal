@@ -68,9 +68,16 @@ struct UsernameEditView: View {
 
 struct StatsView: View {
     
-    var checkins: Int = 30
+    @EnvironmentObject var controller: JournalController
+    
+    var checkins: Int {
+        return controller.journal.count
+    }
     var discoveredEmotions: Int = 20
     var writtenEmotions: Int = 10
+    var lastCheckIn: String {
+        return controller.journal.sorted(by: { $0.date.timeIntervalSince1970 < $1.date.timeIntervalSince1970})[0].dateString
+    }
     
     var body: some View {
         VStack{
@@ -88,9 +95,12 @@ struct StatsView: View {
                         .font(.title3)
                         .foregroundColor(Color("Cinzão"))
                         .fontWeight(.medium)
-                    Text("Último check-in em 21/09/2021")
-                        .font(.caption)
-                        .foregroundColor(.gray)
+                    if checkins != 0 {
+                        Text("Último check-in em \(lastCheckIn)")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                    }
+                    
                 }
                 Spacer()
             }.padding(.top)

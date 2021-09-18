@@ -24,6 +24,7 @@ class Journal: Codable, Identifiable {
     var day: String
     var month: String
     var year: String
+    var dateString: String
 
     class DailyTexts: Codable, Identifiable {
         var ID = UUID()
@@ -56,6 +57,11 @@ class Journal: Codable, Identifiable {
         yearFormatter.dateFormat = "YYYY"
         year = yearFormatter.string(from: self.date)
         
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/YYYY"
+        dateString = dateFormatter.string(from: self.date)
+        
+
     }
     
     public func addText(question: Question, awnser: String){
@@ -92,6 +98,11 @@ class Journal: Codable, Identifiable {
         let yearFormatter = DateFormatter()
         yearFormatter.dateFormat = "YYYY"
         self.year = yearFormatter.string(from: self.date)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/YYYY"
+        dateString = dateFormatter.string(from: self.date)
+
     }
    
 }
