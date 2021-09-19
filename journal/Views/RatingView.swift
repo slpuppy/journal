@@ -10,6 +10,7 @@ import Liquid
 
 struct RatingView: View {
     @Environment(\.presentationMode) var presentationMode
+    @State var blob = 0
     var body: some View {
         VStack(){
             Text("Como você está se sentindo depois de escrever?")
@@ -17,9 +18,43 @@ struct RatingView: View {
                 .modifier(Titulos())
             Spacer()
             HStack{
-                blobPior()
-                blobIgual()
-                blobMelhorTapped()
+                switch blob{
+                case 1:
+                    blobPiorTapped()
+                    blobIgual().onTapGesture {
+                        blob = 2
+                    }
+                    blobMelhor().onTapGesture {
+                        blob = 3
+                    }
+                case 2:
+                    blobPior().onTapGesture {
+                        blob = 1
+                    }
+                    blobIgualTapped()
+                    blobMelhor().onTapGesture {
+                        blob = 3
+                    }
+                case 3:
+                    blobPior().onTapGesture {
+                        blob = 1
+                    }
+                    blobIgual().onTapGesture {
+                        blob = 2
+                    }
+                    blobMelhorTapped()
+                    
+                default:
+                    blobPior().onTapGesture {
+                        blob = 1
+                    }
+                    blobIgual().onTapGesture {
+                        blob = 2
+                    }
+                    blobMelhor().onTapGesture {
+                        blob = 3
+                    }
+                }
             }
             Spacer()
             ZStack{
@@ -55,12 +90,53 @@ struct blobPior: View {
         
     }
 }
+struct blobPiorTapped: View {
+    var body: some View{
+        VStack{
+            ZStack{
+                Circle()
+                    .foregroundColor(Color.white)
+                Circle()
+                    .stroke(Color("AzulEscuro"), lineWidth: 2)
+                Liquid(samples: 5, period: 5).frame(width: 90, height: 90)
+                    .foregroundColor(Color("Azul Rating"))
+                Line(start: CGPoint(x: 30, y: 52), end: CGPoint(x: 70, y: 52), control: CGPoint(x: 50, y: 40))
+                    .stroke(style:StrokeStyle(lineWidth: 5.0, lineCap: .round)).foregroundColor(.white)
+                        
+            }.frame(width: 104, height: 104)
+            Text("Pior")
+                .font(.system(size: 15.0))
+                .foregroundColor(.gray)
+        }
+        
+    }
+}
 struct blobIgual: View {
     var body: some View{
         VStack{
             ZStack{
                 Circle()
                     .foregroundColor(Color.white)
+                Liquid(samples: 6, period: 5).frame(width: 90, height: 90)
+                    .foregroundColor(Color("Cinza Rating"))
+                Line(start: CGPoint(x: 30, y: 52), end: CGPoint(x: 70, y: 52), control: CGPoint(x: 50, y: 52))
+                    .stroke(style:StrokeStyle(lineWidth: 5.0, lineCap: .round)).foregroundColor(.white)
+                        
+            }.frame(width: 104, height: 104)
+            Text("Igual")
+                .font(.system(size: 15.0))                .foregroundColor(.gray)
+        }
+        
+    }
+}
+struct blobIgualTapped: View {
+    var body: some View{
+        VStack{
+            ZStack{
+                Circle()
+                    .foregroundColor(Color.white)
+                Circle()
+                    .stroke(Color("AzulEscuro"), lineWidth: 2)
                 Liquid(samples: 6, period: 5).frame(width: 90, height: 90)
                     .foregroundColor(Color("Cinza Rating"))
                 Line(start: CGPoint(x: 30, y: 52), end: CGPoint(x: 70, y: 52), control: CGPoint(x: 50, y: 52))
@@ -99,8 +175,9 @@ struct blobMelhorTapped: View {
         VStack{
             ZStack{
                 Circle()
-                    .stroke(Color("AzulEscuro"), lineWidth: 1)
                     .foregroundColor(Color.white)
+                Circle()
+                    .stroke(Color("AzulEscuro"), lineWidth: 2)
                 
                 Liquid(samples: 7, period: 5).frame(width: 90, height: 90)
                     .foregroundColor(Color("Laranja Rating"))
