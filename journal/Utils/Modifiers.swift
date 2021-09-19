@@ -8,6 +8,35 @@
 import SwiftUI
 import Liquid
 
+struct TagTest: ViewModifier {
+    var toggle = false
+    func body(content: Content) -> some View {
+        if toggle {
+            content
+                .font(.system(size: 15.0))
+                .foregroundColor(Color.white)
+                .padding(.vertical, 7)
+                .padding(.horizontal, 10)
+                .background(Color("Roxão dark"))
+                .clipShape(RoundedRectangle(cornerRadius: 8.5))
+        }
+        else {
+            content
+                .font(.system(size: 15.0))
+                .foregroundColor(Color("Roxão dark"))
+                .padding(.vertical, 7)
+                .padding(.horizontal, 10)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8.5)
+                                .stroke(Color("Roxão dark"), lineWidth: 2)
+                )
+                
+        }
+  
+    
+    }
+}
+
 struct Tags: ViewModifier {
     func body(content: Content) -> some View {
         content

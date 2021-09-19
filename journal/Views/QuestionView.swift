@@ -10,6 +10,7 @@ import WrappingStack
 
 
 struct QuestionView: View {
+    @EnvironmentObject var controller: JournalController
     @State var reflection: String = ""
     @State var reflectionTitle: String = ""
     let humors = ["Amor", "Vigilância", "Pessimismo","Amor", "Vigilância"]

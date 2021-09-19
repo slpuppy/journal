@@ -46,6 +46,7 @@ struct CheckInView: View {
                                     checkColor: Color("Bege")).frame(width: 70, height: 70).onTapGesture {
                                         value = value + 1
                                         viewRouter.currentPage = .tagSelection
+                                        controller.currentJournal = Journal(initialMood: controller.currentMood)
                                     }
                     case .tagSelection:
                         TagSelectionView()

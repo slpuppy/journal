@@ -11,6 +11,7 @@ import WrappingStack
 struct TagSelectionView: View {
     let feelingTypes: [FeelingType] = [FeelingType.alegria, FeelingType.tristeza, FeelingType.antecipacao, FeelingType.surpresa, FeelingType.nojo, FeelingType.confianca, FeelingType.raiva, FeelingType.medo, FeelingType.outros]
     @EnvironmentObject var controller: JournalController
+
     
     var body: some View {
     
@@ -20,28 +21,23 @@ struct TagSelectionView: View {
                     .fontWeight(.bold)
                     .modifier(Titulos())
                     .padding(.bottom)
-//                    WrappingHStack(id: \.self, alignment: .leading) {
-//
-//                                }
-//                Button("create feeling"){
-//                    controller.addUserFeeling(tag: "batata", text: "pipipipopopo" , type: .alegria, isExpanded: false)
-//                }
                 ScrollView(){
                     VStack(alignment: .leading){
                         ForEach(feelingTypes, id: \.self){ tipo in
                             Text(tipo.description)
                                 .modifier(SubTitulo())
-                            let categoryFeelings : [Feeling] = controller.feelings.filter{
-                                $0.type == tipo
-                            }
                             WrappingHStack(alignment: .leading){
-                                ForEach(categoryFeelings){ feeling in
+//                                ForEach(controller.$feelings.filter{type in type. == tipo}, id: \.self){ feeling in
+                                    ForEach(controller.feelings.filter{$0.type == tipo}){ feeling in
                                     Text(feeling.tag)
-                                        .modifier(Tags())
+                                        .modifier(TagTest(toggle: feeling.isSelected))
                                         .padding(2)
+                                        .onTapGesture {
+                                            controller.selectFeeling(feeling)
+                                        }
                                 }
                             }
-                            
+
                             }
                     }
                 }

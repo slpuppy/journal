@@ -21,12 +21,13 @@ struct Line: Shape {
 
 
 struct MoodTrackerView: View {
+    @EnvironmentObject var controller: JournalController
     @State var sliderValue: Double = 5
     @StateObject var checkInVR = CheckInVR()
     @State private var IsPresented = false
+        
     var body: some View {
         VStack{
-            
             Spacer()
             ZStack{
                 
@@ -95,6 +96,9 @@ struct MoodTrackerView: View {
 //                        }
                         Spacer()
         }.background(Color("BackgroundColor").ignoresSafeArea())
+        .onChange(of: sliderValue) { newValue in
+            controller.currentMood = newValue
+        }
         
     }
 }

@@ -11,6 +11,9 @@ class JournalController: ObservableObject {
     @Published var journal = [Journal]()
     @Published var question = [Question]()
     @Published var feelings = [Feeling]()
+    @Published var currentJournal: Journal?
+    @Published var currentMood: Double = 5
+    
     let feelingTypes = [FeelingType.alegria, FeelingType.tristeza, FeelingType.antecipacao, FeelingType.surpresa, FeelingType.nojo, FeelingType.confianca, FeelingType.raiva, FeelingType.medo, FeelingType.outros]
     private var userFeelings = [Feeling]()
     private var defaultFeelings = [Feeling]()
@@ -32,6 +35,21 @@ class JournalController: ObservableObject {
     func saveJournal(_ toBeSaved: Journal){
         journal.append(toBeSaved)
         saveJournalUserDefault(journal)
+    }
+    
+    func selectFeeling(_ feeling: Feeling) {
+        for i in 0..<feelings.count{
+            if feelings[i].ID == feeling.ID{
+                feelings[i].isSelected.toggle()
+            }
+        }
+//        for feeling in feelings {
+//            feeling.isSelected.toggle()
+//        }
+//        feelings[0].tag = "Batata"
+//        feelings[1].tag = "Batata"
+//        feelings[2].tag = "Batata"
+        objectWillChange.send()
     }
     
     private func saveJournalUserDefault(_ value: [Journal]) {

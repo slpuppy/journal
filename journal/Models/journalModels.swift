@@ -16,7 +16,7 @@ enum ResultMood: String, Codable {
 
 class Journal: Codable, Identifiable {
     var ID = UUID()
-    var mood: Int
+    var mood: Double
     var date: Date
     var afterMood: ResultMood
     var dailyTexts = [DailyTexts]()
@@ -37,7 +37,7 @@ class Journal: Codable, Identifiable {
         }
     }
     
-    init(initialMood: Int) {
+    init(initialMood: Double) {
         mood = initialMood
         date = Date()
         afterMood = .indefinido
@@ -135,16 +135,18 @@ class Question: Codable, Identifiable {
 class Feeling:  Codable, Identifiable {
 
     var ID = UUID()
-    let tag: String
+    var tag: String
     let text: String
     let type: FeelingType
     var isExpanded: Bool
+    var isSelected: Bool
     
     init(tag: String, text: String, type: FeelingType, isExpanded: Bool) {
         self.tag = tag
         self.type = type
         self.text = text
         self.isExpanded = isExpanded
+        self.isSelected = false
     }
     
     static var shared = [
