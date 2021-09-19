@@ -27,7 +27,9 @@
 		75713F6926DE51220032C954 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75713F6826DE51220032C954 /* Assets.xcassets */; };
 		75713F6C26DE51220032C954 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75713F6B26DE51220032C954 /* Preview Assets.xcassets */; };
 		7591F1DC26F21DBF00AEDF78 /* FeelingsCollectionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7591F1DB26F21DBF00AEDF78 /* FeelingsCollectionTableView.swift */; };
-		7591F1DE26F21DFB00AEDF78 /* EmotionCollectionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7591F1DD26F21DFB00AEDF78 /* EmotionCollectionDataManager.swift */; };
+		7594557526F7D2F3000D3BD1 /* FeelingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7594557426F7D2F3000D3BD1 /* FeelingCollectionView.swift */; };
+		7594557826F7D324000D3BD1 /* ACarousel in Frameworks */ = {isa = PBXBuildFile; productRef = 7594557726F7D324000D3BD1 /* ACarousel */; };
+		7594557A26F7D339000D3BD1 /* FeelingTextEditSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7594557926F7D339000D3BD1 /* FeelingTextEditSheet.swift */; };
 		B3010C0126F0D14300FB5827 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3010C0026F0D14300FB5827 /* QuestionView.swift */; };
 		B3010C0526F14C3A00FB5827 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3010C0426F14C3A00FB5827 /* RatingView.swift */; };
 		B3010C0926F1548700FB5827 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3010C0826F1548700FB5827 /* Modifiers.swift */; };
@@ -60,7 +62,8 @@
 		75713F6B26DE51220032C954 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		75713F6D26DE51220032C954 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7591F1DB26F21DBF00AEDF78 /* FeelingsCollectionTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingsCollectionTableView.swift; sourceTree = "<group>"; };
-		7591F1DD26F21DFB00AEDF78 /* EmotionCollectionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionCollectionDataManager.swift; sourceTree = "<group>"; };
+		7594557426F7D2F3000D3BD1 /* FeelingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingCollectionView.swift; sourceTree = "<group>"; };
+		7594557926F7D339000D3BD1 /* FeelingTextEditSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingTextEditSheet.swift; sourceTree = "<group>"; };
 		B3010C0026F0D14300FB5827 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		B3010C0426F14C3A00FB5827 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		B3010C0826F1548700FB5827 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
@@ -76,6 +79,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B89032026DFA3F200913020 /* Liquid in Frameworks */,
+				7594557826F7D324000D3BD1 /* ACarousel in Frameworks */,
 				B3058FEE26F41CF500AE5F46 /* WrappingStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,7 +104,6 @@
 				B3010C0826F1548700FB5827 /* Modifiers.swift */,
 				4B8593E626EA4695008C446F /* TabBar.swift */,
 				4B8593E826EA705F008C446F /* ViewRouter.swift */,
-				7591F1DD26F21DFB00AEDF78 /* EmotionCollectionDataManager.swift */,
 				4B5F839B26F3C83C0067B11B /* EntryCard.swift */,
 				B3FC276F26F684A600CC4C4F /* CheckInVR.swift */,
 			);
@@ -120,6 +123,8 @@
 				B3010C0426F14C3A00FB5827 /* RatingView.swift */,
 				4B8DE54926ED28F1005EBF39 /* HomeView.swift */,
 				7591F1DB26F21DBF00AEDF78 /* FeelingsCollectionTableView.swift */,
+				7594557426F7D2F3000D3BD1 /* FeelingCollectionView.swift */,
+				7594557926F7D339000D3BD1 /* FeelingTextEditSheet.swift */,
 				4BF725CF26F27AD200634AB9 /* HistoryView.swift */,
 				4B5F839D26F3C8D80067B11B /* DetailedEntryView.swift */,
 				B3FC276B26F6653E00CC4C4F /* CheckInView.swift */,
@@ -185,6 +190,7 @@
 			packageProductDependencies = (
 				4B89031F26DFA3F200913020 /* Liquid */,
 				B3058FED26F41CF500AE5F46 /* WrappingStack */,
+				7594557726F7D324000D3BD1 /* ACarousel */,
 			);
 			productName = journal;
 			productReference = 75713F6126DE51200032C954 /* journal.app */;
@@ -216,6 +222,7 @@
 			packageReferences = (
 				4B89031E26DFA3F200913020 /* XCRemoteSwiftPackageReference "liquid" */,
 				B3058FEC26F41CF500AE5F46 /* XCRemoteSwiftPackageReference "swiftui-wrapping-stack" */,
+				7594557626F7D324000D3BD1 /* XCRemoteSwiftPackageReference "ACarousel" */,
 			);
 			productRefGroup = 75713F6226DE51200032C954 /* Products */;
 			projectDirPath = "";
@@ -243,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7594557526F7D2F3000D3BD1 /* FeelingCollectionView.swift in Sources */,
 				4B8DE54A26ED28F1005EBF39 /* HomeView.swift in Sources */,
 				4B75948326F17E4D00A9F8C7 /* PrivacyView.swift in Sources */,
 				4B75947E26F17DF500A9F8C7 /* CreditsView.swift in Sources */,
@@ -250,7 +258,6 @@
 				4B75947C26F0E70200A9F8C7 /* ProfileView.swift in Sources */,
 				B3FC277026F684A600CC4C4F /* CheckInVR.swift in Sources */,
 				4BF725D026F27AD200634AB9 /* HistoryView.swift in Sources */,
-				7591F1DE26F21DFB00AEDF78 /* EmotionCollectionDataManager.swift in Sources */,
 				75713F6726DE51200032C954 /* ContentView.swift in Sources */,
 				4B75948026F17E1B00A9F8C7 /* FeedbacksView.swift in Sources */,
 				4BC3C7EA26E95BE40016E47C /* CheckButton.swift in Sources */,
@@ -265,6 +272,7 @@
 				B3010C0526F14C3A00FB5827 /* RatingView.swift in Sources */,
 				4B5F839E26F3C8D80067B11B /* DetailedEntryView.swift in Sources */,
 				B33BD6DE26EA33F6005913D2 /* TagSelectionView.swift in Sources */,
+				7594557A26F7D339000D3BD1 /* FeelingTextEditSheet.swift in Sources */,
 				7591F1DC26F21DBF00AEDF78 /* FeelingsCollectionTableView.swift in Sources */,
 				B3FC276C26F6653E00CC4C4F /* CheckInView.swift in Sources */,
 				4B5F839C26F3C83C0067B11B /* EntryCard.swift in Sources */,
@@ -467,6 +475,14 @@
 				minimumVersion = 0.0.2;
 			};
 		};
+		7594557626F7D324000D3BD1 /* XCRemoteSwiftPackageReference "ACarousel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JWAutumn/ACarousel";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
 		B3058FEC26F41CF500AE5F46 /* XCRemoteSwiftPackageReference "swiftui-wrapping-stack" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/diniska/swiftui-wrapping-stack";
@@ -482,6 +498,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4B89031E26DFA3F200913020 /* XCRemoteSwiftPackageReference "liquid" */;
 			productName = Liquid;
+		};
+		7594557726F7D324000D3BD1 /* ACarousel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7594557626F7D324000D3BD1 /* XCRemoteSwiftPackageReference "ACarousel" */;
+			productName = ACarousel;
 		};
 		B3058FED26F41CF500AE5F46 /* WrappingStack */ = {
 			isa = XCSwiftPackageProductDependency;

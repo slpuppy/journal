@@ -132,14 +132,50 @@ class Question: Codable, Identifiable {
     }
 }
 
-class Feeling:  Codable, Identifiable {
+class Feeling:  Codable, Identifiable, ObservableObject {
+    
+    
+    
+    enum CodingKeys: CodingKey {
+      
+      case text
+      case isExpanded
+      case tag
+      case type
+      case isSelected
+      
+      
+  }
 
     var ID = UUID()
     var tag: String
-    let text: String
+    @Published var text: String
     let type: FeelingType
-    var isExpanded: Bool
+    @Published var isExpanded: Bool
     var isSelected: Bool
+    
+    
+    required init(from decoder: Decoder) throws {
+          let container = try decoder.container(keyedBy: CodingKeys.self)
+          text = try container.decode(String.self, forKey: .text)
+          isExpanded = try container.decode(Bool.self, forKey: .isExpanded)
+          tag = try container.decode(String.self, forKey: .tag)
+          type = try container.decode(FeelingType.self, forKey: .type)
+          isSelected = try container.decode(Bool.self, forKey: .isSelected)
+           
+   }
+    
+    
+    func encode(to encoder: Encoder) throws {
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            try container.encode(text, forKey: .text)
+            try container.encode(isExpanded, forKey: .isExpanded)
+            try container.encode(tag, forKey: .tag)
+            try container.encode(type, forKey: .type)
+            try container.encode(isSelected, forKey: .isSelected)
+        }
+    
+    
     
     init(tag: String, text: String, type: FeelingType, isExpanded: Bool) {
         self.tag = tag
@@ -316,7 +352,7 @@ class Feeling:  Codable, Identifiable {
     ]
 }
 
-enum FeelingType: String, Codable, CustomStringConvertible {
+enum FeelingType: String, Codable, CustomStringConvertible, CaseIterable {
     case alegria 
     case tristeza
     case antecipacao
@@ -328,15 +364,15 @@ enum FeelingType: String, Codable, CustomStringConvertible {
     case outros
     var description: String{
         switch self {
-        case .alegria : return "ALEGRIA"
-        case .tristeza : return "TRISTEZA"
-        case .antecipacao : return "ANTECIPAÇÃO"
-        case .surpresa : return "SURPRESA"
-        case .nojo : return "NOJO"
-        case .confianca : return "CONFIANÇA"
-        case .raiva : return "RAIVA"
-        case .medo : return "MEDO"
-        case .outros : return "OUTROS"
+        case .alegria : return "Alegria"
+        case .tristeza : return "Tristeza"
+        case .antecipacao : return "Antecipação"
+        case .surpresa : return "Surpresa"
+        case .nojo : return "Repulsão"
+        case .confianca : return "Confiança"
+        case .raiva : return "Raiva"
+        case .medo : return "Medo"
+        case .outros : return "Outros"
         }
     }
     
