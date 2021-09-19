@@ -29,6 +29,22 @@ struct abubleView: View {
         CheckInView(viewRouter: checkInVR)
     }
 }
+struct backButton: View {
+    var body: some View{
+        VStack{
+            Image(systemName: "chevron.left")
+                .foregroundColor(Color("AzulEscuro"))
+        }.frame(width: 20, height: 20)
+    }
+}
+struct closeButton: View {
+    var body: some View{
+        VStack{
+            Image(systemName: "xmark")
+                .foregroundColor(Color("AzulEscuro"))
+        }.frame(width: 20, height: 20)
+    }
+}
 struct CheckInView: View {
     @EnvironmentObject var controller: JournalController
     @Environment(\.presentationMode) var presentationMode
@@ -41,6 +57,15 @@ struct CheckInView: View {
                 VStack(){
                     switch viewRouter.currentPage {
                     case .moodTrack:
+                        HStack(){
+                            backButton().onTapGesture {
+                                presentationMode.wrappedValue.dismiss()
+                            }.padding(.horizontal, 20)
+                            Spacer()
+                            closeButton().onTapGesture {
+                                presentationMode.wrappedValue.dismiss()
+                            }.padding(.horizontal, 20)
+                        }
                         MoodTrackerView()
                         CheckButton(buttonColor: Color("AzulEscuro"),
                                     checkColor: Color("Bege")).frame(width: 70, height: 70).onTapGesture {
@@ -48,18 +73,39 @@ struct CheckInView: View {
                                         viewRouter.currentPage = .tagSelection
                                         controller.currentJournal = Journal(initialMood: controller.currentMood)
                                     }
+                        
                     case .tagSelection:
+                        HStack(){
+                            backButton().onTapGesture {
+                                value = value - 1
+                                viewRouter.currentPage = .moodTrack
+                            }.padding(.horizontal, 20)
+                            Spacer()
+                            closeButton().onTapGesture {
+                                presentationMode.wrappedValue.dismiss()
+                            }.padding(.horizontal, 20)
+                        }
                         ZStack(alignment: .bottomTrailing){
                             TagSelectionView()
                             VStack{
                                 CheckButton(buttonColor: Color("AzulEscuro"),
                                             checkColor: Color("Bege")).frame(width: 70, height: 70).onTapGesture {
                                                 value = value + 1
-                                                viewRouter.currentPage = .question2
+                                                viewRouter.currentPage = .question1
                                             }
                             }.padding()
                         }
                     case .question1:
+                        HStack(){
+                            backButton().onTapGesture {
+                                value = value - 1
+                                viewRouter.currentPage = .tagSelection
+                            }.padding(.horizontal, 20)
+                            Spacer()
+                            closeButton().onTapGesture {
+                                presentationMode.wrappedValue.dismiss()
+                            }.padding(.horizontal, 20)
+                        }
                         ZStack(alignment: .bottomTrailing){
                             QuestionView()
                             VStack{
@@ -71,6 +117,16 @@ struct CheckInView: View {
                             }.padding()
                         }
                     case .question2:
+                        HStack(){
+                            backButton().onTapGesture {
+                                value = value - 1
+                                viewRouter.currentPage = .question1
+                            }.padding(.horizontal, 20)
+                            Spacer()
+                            closeButton().onTapGesture {
+                                presentationMode.wrappedValue.dismiss()
+                            }.padding(.horizontal, 20)
+                        }
                         ZStack(alignment: .bottomTrailing){
                             QuestionView()
                             VStack{
