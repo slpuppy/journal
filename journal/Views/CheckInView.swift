@@ -49,26 +49,38 @@ struct CheckInView: View {
                                         controller.currentJournal = Journal(initialMood: controller.currentMood)
                                     }
                     case .tagSelection:
-                        TagSelectionView()
-                        CheckButton(buttonColor: Color("AzulEscuro"),
-                                    checkColor: Color("Bege")).frame(width: 70, height: 70).onTapGesture {
-                                        value = value + 1
-                                        viewRouter.currentPage = .question1
-                                    }
+                        ZStack(alignment: .bottomTrailing){
+                            TagSelectionView()
+                            VStack{
+                                CheckButton(buttonColor: Color("AzulEscuro"),
+                                            checkColor: Color("Bege")).frame(width: 70, height: 70).onTapGesture {
+                                                value = value + 1
+                                                viewRouter.currentPage = .question2
+                                            }
+                            }.padding()
+                        }
                     case .question1:
-                        QuestionView()
-                        CheckButton(buttonColor: Color("AzulEscuro"),
-                                    checkColor: Color("Bege")).frame(width: 70, height: 70).onTapGesture {
-                                        value = value + 1
-                                        viewRouter.currentPage = .question2
-                                    }
+                        ZStack(alignment: .bottomTrailing){
+                            QuestionView()
+                            VStack{
+                                CheckButton(buttonColor: Color("AzulEscuro"),
+                                            checkColor: Color("Bege")).frame(width: 70, height: 70).onTapGesture {
+                                                value = value + 1
+                                                viewRouter.currentPage = .question2
+                                            }
+                            }.padding()
+                        }
                     case .question2:
-                        QuestionView()
-                        CheckButton(buttonColor: Color("AzulEscuro"),
-                                    checkColor: Color("Bege")).frame(width: 70, height: 70).onTapGesture {
-                                        value = value + 1
-                                        viewRouter.currentPage = .rating
-                                    }
+                        ZStack(alignment: .bottomTrailing){
+                            QuestionView()
+                            VStack{
+                                CheckButton(buttonColor: Color("AzulEscuro"),
+                                            checkColor: Color("Bege")).frame(width: 70, height: 70).onTapGesture {
+                                                value = value + 1
+                                                viewRouter.currentPage = .rating
+                                            }
+                            }.padding()
+                        }
                     case .rating:
                         RatingView()
                     }
