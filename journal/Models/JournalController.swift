@@ -11,8 +11,10 @@ class JournalController: ObservableObject {
     @Published var journal = [Journal]()
     @Published var question = [Question]()
     @Published var feelings = [Feeling]()
+    
     @Published var currentJournal: Journal?
     @Published var currentMood: Double = 5
+    @Published var currentFeelings = [Feeling]()
     
     let feelingTypes = [FeelingType.alegria, FeelingType.tristeza, FeelingType.antecipacao, FeelingType.surpresa, FeelingType.nojo, FeelingType.confianca, FeelingType.raiva, FeelingType.medo, FeelingType.outros]
     private var userFeelings = [Feeling]()
@@ -41,14 +43,25 @@ class JournalController: ObservableObject {
         for i in 0..<feelings.count{
             if feelings[i].ID == feeling.ID{
                 feelings[i].isSelected.toggle()
+                if feelings[i].isSelected {
+                    currentFeelings.append(feeling)
+                }
+                else {
+                    for j in 0..<currentFeelings.count {
+                        if currentFeelings[j].ID == feelings[i].ID {
+                            currentFeelings.remove(at: j)
+                        }
+                    }
+                }
             }
         }
-//        for feeling in feelings {
-//            feeling.isSelected.toggle()
-//        }
-//        feelings[0].tag = "Batata"
-//        feelings[1].tag = "Batata"
-//        feelings[2].tag = "Batata"
+        objectWillChange.send()
+    }
+    
+    func resetCurrent(){
+        currentJournal = nil
+        currentMood = 5
+        currentFeelings = [Feeling]()
         objectWillChange.send()
     }
     

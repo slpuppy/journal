@@ -99,6 +99,9 @@ struct MoodTrackerView: View {
         .onChange(of: sliderValue) { newValue in
             controller.currentMood = newValue
         }
+        .onAppear(perform: {
+            controller.resetCurrent()
+        })
         
     }
 }

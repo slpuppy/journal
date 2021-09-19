@@ -30,7 +30,7 @@ struct TagSelectionView: View {
 //                                ForEach(controller.$feelings.filter{type in type. == tipo}, id: \.self){ feeling in
                                     ForEach(controller.feelings.filter{$0.type == tipo}){ feeling in
                                     Text(feeling.tag)
-                                        .modifier(TagTest(toggle: feeling.isSelected))
+                                        .modifier(TagToggle(toggle: feeling.isSelected))
                                         .padding(2)
                                         .onTapGesture {
                                             controller.selectFeeling(feeling)
@@ -46,6 +46,7 @@ struct TagSelectionView: View {
             }
             
         }.padding()
+        
     }
 }
 

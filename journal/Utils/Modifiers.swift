@@ -8,7 +8,7 @@
 import SwiftUI
 import Liquid
 
-struct TagTest: ViewModifier {
+struct TagToggle: ViewModifier {
     var toggle = false
     func body(content: Content) -> some View {
         if toggle {
@@ -30,10 +30,7 @@ struct TagTest: ViewModifier {
                     RoundedRectangle(cornerRadius: 8.5)
                                 .stroke(Color("Roxão dark"), lineWidth: 2)
                 )
-                
         }
-  
-    
     }
 }
 

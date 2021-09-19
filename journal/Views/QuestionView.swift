@@ -13,7 +13,7 @@ struct QuestionView: View {
     @EnvironmentObject var controller: JournalController
     @State var reflection: String = ""
     @State var reflectionTitle: String = ""
-    let humors = ["Amor", "Vigilância", "Pessimismo","Amor", "Vigilância"]
+    //let humors = ["Amor", "Vigilância", "Pessimismo","Amor", "Vigilância"]
     
     var body: some View {
         VStack(alignment: .leading){
@@ -21,12 +21,12 @@ struct QuestionView: View {
                 Text("Como foi seu dia?")
                     .fontWeight(.bold)
                     .modifier(Titulos())
-                WrappingHStack(id: \.self, alignment: .leading) {
-                            ForEach(humors, id: \.self) { humor in
-                                Text(humor)
-                                    .modifier(TagUsed())
-                                    .padding(3)
-                            }
+                WrappingHStack(alignment: .leading) {
+                    ForEach(controller.currentFeelings) { feeling in
+                        Text(feeling.tag)
+                            .modifier(TagUsed())
+                            .padding(3)
+                    }
                 }
                 
             }
@@ -47,7 +47,6 @@ struct QuestionView2: View {
     @EnvironmentObject var controller: JournalController
     @State var reflection: String = ""
     @State var reflectionTitle: String = ""
-    let humors = ["Amor", "Vigilância", "Pessimismo","Amor", "Vigilância"]
     
     var body: some View {
         VStack(alignment: .leading){
@@ -55,12 +54,12 @@ struct QuestionView2: View {
                 Text("O que te fez sentir essas emoções?")
                     .fontWeight(.bold)
                     .modifier(Titulos())
-                WrappingHStack(id: \.self, alignment: .leading) {
-                            ForEach(humors, id: \.self) { humor in
-                                Text(humor)
-                                    .modifier(TagUsed())
-                                    .padding(3)
-                            }
+                WrappingHStack(alignment: .leading) {
+                    ForEach(controller.currentFeelings) { feeling in
+                        Text(feeling.tag)
+                            .modifier(TagUsed())
+                            .padding(3)
+                    }
                 }
                 
             }
