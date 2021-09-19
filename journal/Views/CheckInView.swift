@@ -128,7 +128,7 @@ struct CheckInView: View {
                             }.padding(.horizontal, 20)
                         }
                         ZStack(alignment: .bottomTrailing){
-                            QuestionView()
+                            QuestionView2()
                             VStack{
                                 CheckButton(buttonColor: Color("AzulEscuro"),
                                             checkColor: Color("Bege")).frame(width: 70, height: 70).onTapGesture {
