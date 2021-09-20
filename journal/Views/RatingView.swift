@@ -74,7 +74,7 @@ struct RatingView: View {
                 case 2:
                     controller.currentAfterMood = .igual
                 case 3:
-                    controller.currentAfterMood = .pior
+                    controller.currentAfterMood = .melhor
                 default:
                     controller.currentAfterMood = .indefinido
                 }

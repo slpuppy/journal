@@ -19,7 +19,7 @@ struct EntryCard: View {
                     .font(.system(size: 20, weight:.semibold))
                     .foregroundColor(Color("AzulEscuro"))
                 Spacer()
-                Image("Mood\(journal.mood)")
+                Image("Mood\(Int(journal.mood/2))")
                 Spacer()
             }.padding()
             

@@ -27,7 +27,7 @@ struct DetailedEntryView: View {
                 HStack{
                     VStack(alignment: .leading){
                         Text("COMO VOCÊ SE SENTIU").font(.caption).foregroundColor(Color("CinzaHistorico"))
-                        Image("Mood\(journal.mood)")
+                        Image("Mood\(Int(journal.mood/2))")
                     }
                     Spacer()
                 }.padding(.bottom)
@@ -43,7 +43,7 @@ struct DetailedEntryView: View {
                     }
                 }.padding(.bottom)
                 
-                HStack{
+                VStack(alignment: .leading){
                     
                     
                     ForEach(journal.dailyTexts){dailyText in
@@ -53,7 +53,7 @@ struct DetailedEntryView: View {
                                 .foregroundColor(Color("CinzaHistorico"))
                             Text(dailyText.text)
                                 .foregroundColor(Color("Cinzão"))
-                        }
+                        }.padding(.bottom)
                         
                     }
                     
