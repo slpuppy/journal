@@ -141,6 +141,16 @@ struct CheckInView: View {
                             }.padding()
                         }
                     case .rating:
+                        HStack(){
+                            backButton().onTapGesture {
+                                value = value - 1
+                                viewRouter.currentPage = .question1
+                            }.padding(.horizontal, 20)
+                            Spacer()
+                            closeButton().onTapGesture {
+                                presentationMode.wrappedValue.dismiss()
+                            }.padding(.horizontal, 20)
+                        }
                         RatingView()
                     }
                     
