@@ -11,9 +11,13 @@ import WrappingStack
 
 struct QuestionView: View {
     @EnvironmentObject var controller: JournalController
-    @State var reflection: String = ""
+    @State var reflection: String = "Escreva aqui..."
     @State var reflectionTitle: String = ""
     //let humors = ["Amor", "Vigilância", "Pessimismo","Amor", "Vigilância"]
+    init() {
+            UITextView.appearance().backgroundColor = .clear
+        }
+
     
     var body: some View {
         VStack(alignment: .leading){
@@ -33,9 +37,12 @@ struct QuestionView: View {
             TextField("Título", text: $reflectionTitle)
                 .foregroundColor(Color("Preto"))
                 .font(.system(size: 22.0))
-            TextField("Escreva aqui...", text: $reflection)
+            TextEditor(text: $reflection)
+                .background(Color.clear)
                 .font(.system(size: 16.0))
                 .foregroundColor(Color("Preto"))
+                
+            
             Spacer()
             
         }.padding(.horizontal, 20)
@@ -45,8 +52,12 @@ struct QuestionView: View {
 }
 struct QuestionView2: View {
     @EnvironmentObject var controller: JournalController
-    @State var reflection: String = ""
+    @State var reflection: String = "Escreva aqui..."
     @State var reflectionTitle: String = ""
+    init() {
+            UITextView.appearance().backgroundColor = .clear
+        }
+
     
     var body: some View {
         VStack(alignment: .leading){
@@ -66,9 +77,11 @@ struct QuestionView2: View {
             TextField("Título", text: $reflectionTitle)
                 .foregroundColor(Color("Preto"))
                 .font(.system(size: 22.0))
-            TextField("Escreva aqui...", text: $reflection)
+            TextEditor( text: $reflection)
+                .background(Color.clear)
                 .font(.system(size: 16.0))
                 .foregroundColor(Color("Preto"))
+                
             Spacer()
             
         }.padding(.horizontal, 20)
