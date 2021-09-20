@@ -9,6 +9,7 @@ import SwiftUI
 import Liquid
 
 struct RatingView: View {
+    @EnvironmentObject var controller: JournalController
     @Environment(\.presentationMode) var presentationMode
     @State var blob = 0
     var body: some View {
@@ -63,8 +64,22 @@ struct RatingView: View {
                 Image(systemName: "checkmark")
                     .font(.system(size: 20.0))
                     .foregroundColor(.white)
-            }.frame(width: 60, height: 60).onTapGesture {
+            }
+            .frame(width: 60, height: 60)
+            .onTapGesture {
                 presentationMode.wrappedValue.dismiss()
+                switch blob{
+                case 1:
+                    controller.currentAfterMood = .pior
+                case 2:
+                    controller.currentAfterMood = .igual
+                case 3:
+                    controller.currentAfterMood = .pior
+                default:
+                    controller.currentAfterMood = .indefinido
+                }
+                controller.currentJournal!.afterMood = controller.currentAfterMood
+                controller.saveJournal(controller.currentJournal!)
             }
             .padding(.bottom)
         }.padding(.top)

@@ -15,6 +15,9 @@ class JournalController: ObservableObject {
     @Published var currentJournal: Journal?
     @Published var currentMood: Double = 5
     @Published var currentFeelings = [Feeling]()
+    @Published var currentTitle = ""
+    @Published var currentText = ""
+    @Published var currentAfterMood = ResultMood.indefinido
     
     let feelingTypes = [FeelingType.alegria, FeelingType.tristeza, FeelingType.antecipacao, FeelingType.surpresa, FeelingType.nojo, FeelingType.confianca, FeelingType.raiva, FeelingType.medo, FeelingType.outros]
     private var userFeelings = [Feeling]()
@@ -59,9 +62,15 @@ class JournalController: ObservableObject {
     }
     
     func resetCurrent(){
+        for feeling in feelings {
+            feeling.isSelected = false
+        }
         currentJournal = nil
         currentMood = 5
         currentFeelings = [Feeling]()
+        currentTitle = ""
+        currentText = ""
+        currentAfterMood = ResultMood.indefinido
         objectWillChange.send()
     }
     

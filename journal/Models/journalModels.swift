@@ -29,10 +29,12 @@ class Journal: Codable, Identifiable {
     class DailyTexts: Codable, Identifiable {
         var ID = UUID()
         var question: Question
+        var title: String
         var text: String
         
-        init(question: Question, awnser: String) {
+        init(question: Question, title: String, awnser: String) {
             self.question = question
+            self.title = title
             self.text = awnser
         }
     }
@@ -64,8 +66,8 @@ class Journal: Codable, Identifiable {
 
     }
     
-    public func addText(question: Question, awnser: String){
-        let text = DailyTexts(question: question, awnser: awnser)
+    public func addText(question: Question, title: String, awnser: String){
+        let text = DailyTexts(question: question, title: title, awnser: awnser)
         dailyTexts.append(text)
     }
     
@@ -118,7 +120,7 @@ class Question: Codable, Identifiable {
     
     static var shared = [
         Question(text: "Como foi seu dia?", type: .inicio),
-        Question(text: "O que te fez se sentir assim?", type: .meio),
+        Question(text: "O que te fez sentir essas emoções?", type: .meio),
         Question(text: "O que você faria para melhorar?", type: .fim)
     ]
     

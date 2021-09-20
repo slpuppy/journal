@@ -40,9 +40,15 @@ struct QuestionView: View {
             
         }.padding(.horizontal, 20)
         .padding(.vertical, 10)
+        .onChange(of: reflection, perform: { value in
+            controller.currentText = value
+        })
+        .onChange(of: reflectionTitle, perform: { value in
+            controller.currentTitle = value
+        })
     }
-    
 }
+
 struct QuestionView2: View {
     @EnvironmentObject var controller: JournalController
     @State var reflection: String = ""
@@ -73,6 +79,12 @@ struct QuestionView2: View {
             
         }.padding(.horizontal, 20)
         .padding(.vertical, 10)
+        .onChange(of: reflection, perform: { value in
+            controller.currentText = value
+        })
+        .onChange(of: reflectionTitle, perform: { value in
+            controller.currentTitle = value
+        })
     }
     
 }

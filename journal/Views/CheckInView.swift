@@ -92,6 +92,7 @@ struct CheckInView: View {
                                             checkColor: Color("Bege")).frame(width: 70, height: 70).onTapGesture {
                                                 value = value + 1
                                                 viewRouter.currentPage = .question1
+                                                controller.currentJournal!.addFeelings(feelings: controller.currentFeelings)
                                             }
                             }.padding()
                         }
@@ -113,6 +114,7 @@ struct CheckInView: View {
                                             checkColor: Color("Bege")).frame(width: 70, height: 70).onTapGesture {
                                                 value = value + 1
                                                 viewRouter.currentPage = .question2
+                                                controller.currentJournal!.addText(question: Question.shared[0], title: controller.currentTitle, awnser: controller.currentText)
                                             }
                             }.padding()
                         }
@@ -134,6 +136,7 @@ struct CheckInView: View {
                                             checkColor: Color("Bege")).frame(width: 70, height: 70).onTapGesture {
                                                 value = value + 1
                                                 viewRouter.currentPage = .rating
+                                                controller.currentJournal!.addText(question: Question.shared[1], title: controller.currentTitle, awnser: controller.currentText)
                                             }
                             }.padding()
                         }
