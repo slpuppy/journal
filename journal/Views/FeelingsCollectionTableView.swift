@@ -59,7 +59,7 @@ struct FeelingRow: View {
                                     .font(.system(size: 16,
                                                   weight: .regular,
                                                   design: .default))
-                                    .foregroundColor(Color("Cinza rating"))
+                                    .foregroundColor(Color("Cinza Rating"))
                                     .padding(.leading, 20)
                                     .padding(.trailing, 20)
                                 

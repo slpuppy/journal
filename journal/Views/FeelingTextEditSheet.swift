@@ -47,7 +47,7 @@ struct FeelingTextEditSheet: View {
                 .font(.system(size: 16,
                               weight: .regular,
                               design: .default))
-                .foregroundColor(Color("Cinza rating"))
+                .foregroundColor(Color("Cinza Rating"))
                 .onTapGesture {
                     
                     self.editing = true
